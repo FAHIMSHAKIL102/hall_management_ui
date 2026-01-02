@@ -11,9 +11,18 @@ class Mybutton extends StatelessWidget {
       width: 381,
       decoration: BoxDecoration(
         color: Color(0xff2BAE66),
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(35),
       ),
-      child: Center(child: Text(title)),
+      child: Center(
+        child: Text(
+          title,
+          style: TextStyle(
+            fontSize: 16,
+            fontFamily: 'Urbanist-Medium',
+            color: Color(0xffFFFFFF),
+          ),
+        ),
+      ),
     );
   }
 }

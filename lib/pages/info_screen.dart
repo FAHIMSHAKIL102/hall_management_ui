@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hall_management_ui/pages/signin_screen.dart';
 
 class InfoScreen extends StatelessWidget {
   const InfoScreen({super.key});
@@ -27,7 +28,7 @@ class InfoScreen extends StatelessWidget {
                     child: Text(
                       'Lets have \nthe best \naccommodation with us',
                       style: TextStyle(
-                        fontSize: 40,
+                        fontSize: 42,
                         fontFamily: 'Urbanist-SemiBold',
                         color: Color(0xff2BAE66),
                       ),
@@ -37,9 +38,9 @@ class InfoScreen extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 25),
+          //SizedBox(height: 25),
           Container(
-            margin: EdgeInsets.only(left: 25),
+            margin: EdgeInsets.only(left: 25, top: 44),
             height: 48,
             width: 313,
             child: Text(
@@ -48,26 +49,32 @@ class InfoScreen extends StatelessWidget {
             ),
           ),
           SizedBox(height: 99),
-          Container(
-            margin: EdgeInsets.only(left: 25),
-            height: 55,
-            width: 381,
-            decoration: BoxDecoration(
-              border: Border.all(color: Color(0xff2BAE66), width: 3),
-              borderRadius: BorderRadius.circular(35),
+          InkWell(
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SigninScreen()),
             ),
-            child: Center(
-              child: Text(
-                'Next',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Color(0xff2BAE66),
-                  fontFamily: 'Urbanist-Bold',
+            child: Container(
+              margin: EdgeInsets.only(left: 25),
+              height: 55,
+              width: 381,
+              decoration: BoxDecoration(
+                border: Border.all(color: Color(0xff2BAE66), width: 3),
+                borderRadius: BorderRadius.circular(35),
+              ),
+              child: Center(
+                child: Text(
+                  'Next',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Color(0xff2BAE66),
+                    fontFamily: 'Urbanist-Bold',
+                  ),
                 ),
               ),
             ),
           ),
-          SizedBox(height: 44),
+          SizedBox(height: 50),
         ],
       ),
     );
