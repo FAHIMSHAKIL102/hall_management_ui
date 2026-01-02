@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hall_management_ui/pages/splash_screen.dart';
+import 'package:hall_management_ui/provider/password_visibility_provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,6 +12,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: SplashScreen());
+    return MultiProvider(
+      providers: [ChangeNotifierProvider(create: (_) => PasswordVisibilityProvider())],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: SplashScreen(),
+      ),
+    );
   }
 }

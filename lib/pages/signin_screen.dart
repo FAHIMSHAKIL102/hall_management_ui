@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hall_management_ui/custom_widgets/myTextFormfield.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
 import 'package:hall_management_ui/custom_widgets/mytextstyle.dart';
+import 'package:hall_management_ui/provider/password_visibility_provider.dart';
+import 'package:provider/provider.dart';
 
 class SigninScreen extends StatefulWidget {
   const SigninScreen({super.key});
@@ -32,12 +34,23 @@ class _SigninScreenState extends State<SigninScreen> {
               myObscureText: false,
               myPrefixIcon: Icon(Icons.email),
             ),
-            Mytextformfield(
-              myController: passwordController,
-              myHintText: 'Password',
-              myObscureText: true,
-              myPrefixIcon: Icon(Icons.lock),
-              mySuffixIcon: Icon(Icons.visibility),
+            Consumer<PasswordVisibilityProvider>(
+              builder: (BuildContext context, value, child) {
+                return Mytextformfield(
+                  myController: passwordController,
+                  myHintText: 'Password',
+                  myObscureText: value.toggle,
+                  myPrefixIcon: Icon(Icons.lock),
+                  mySuffixIcon: IconButton(
+                    onPressed: () {
+                      value.setToggle();
+                    },
+                    icon: Icon(
+                      value.toggle ? Icons.visibility_off : Icons.visibility,
+                    ),
+                  ),
+                );
+              },
             ),
             Row(
               mainAxisAlignment: .center,

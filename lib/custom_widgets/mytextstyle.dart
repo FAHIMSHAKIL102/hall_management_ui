@@ -6,6 +6,7 @@ TextStyle myTextStyle45() {
     fontSize: 45,
     fontFamily: 'Urbanist-Bold',
     color: Color(0xff2BAE66),
+    fontWeight: FontWeight.bold
   );
 }
 

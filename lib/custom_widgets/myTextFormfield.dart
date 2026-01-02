@@ -4,7 +4,7 @@ class Mytextformfield extends StatelessWidget {
   var myController;
   String myHintText;
   Icon? myPrefixIcon;
-  Icon? mySuffixIcon;
+  IconButton? mySuffixIcon;
   bool myObscureText;
   Mytextformfield({
     super.key,
@@ -20,8 +20,19 @@ class Mytextformfield extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(12.5),
       child: TextFormField(
+        controller: myController,
         obscureText: myObscureText,
         decoration: InputDecoration(
+          prefixIconColor: WidgetStateColor.resolveWith((state) {
+            return state.contains(WidgetState.focused)
+                ? Color(0xff2BAE66)
+                : Color(0xff646464);
+          }),
+          suffixIconColor: WidgetStateColor.resolveWith((state) {
+            return state.contains(WidgetState.focused)
+                ? Color(0xff2BAE66)
+                : Color(0xff646464);
+          }),
           hintText: myHintText,
           prefixIcon: myPrefixIcon,
           suffixIcon: mySuffixIcon,

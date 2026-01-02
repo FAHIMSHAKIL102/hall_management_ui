@@ -29,7 +29,7 @@ class InfoScreen extends StatelessWidget {
                       'Lets have \nthe best \naccommodation with us',
                       style: TextStyle(
                         fontSize: 42,
-                        fontFamily: 'Urbanist-SemiBold',
+                        fontFamily: 'Urbanist-Bold',
                         color: Color(0xff2BAE66),
                       ),
                     ),
