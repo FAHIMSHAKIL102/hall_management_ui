@@ -2,20 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:hall_management_ui/custom_widgets/myTextFormfield.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
 import 'package:hall_management_ui/custom_widgets/mytextstyle.dart';
-import 'package:hall_management_ui/pages/signup_screen.dart';
 import 'package:hall_management_ui/provider/password_visibility_provider.dart';
 import 'package:provider/provider.dart';
 
-class SigninScreen extends StatefulWidget {
-  const SigninScreen({super.key});
-
-  @override
-  State<SigninScreen> createState() => _SigninScreenState();
-}
-
-class _SigninScreenState extends State<SigninScreen> {
+class SignupScreen extends StatelessWidget {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  SignupScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +20,7 @@ class _SigninScreenState extends State<SigninScreen> {
           children: [
             Container(
               margin: EdgeInsets.only(top: 203),
-              child: myText45("Let's you in"),
+              child: myText45("Create an account"),
             ),
             SizedBox(height: 50),
             Mytextformfield(
@@ -84,22 +78,12 @@ class _SigninScreenState extends State<SigninScreen> {
                     fontSize: 14,
                   ),
                 ),
-                SizedBox(width: 2),
-                InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SignupScreen()),
-                    );
-                  },
-                  child: Text(
-                    'Sign Up',
-                    style: TextStyle(
-                      fontFamily: 'Urbanist-Bold',
-                      fontSize: 14,
-                      color: Color(0xff2BAE66),
-                      fontWeight: FontWeight.bold,
-                    ),
+                Text(
+                  'Sign Up',
+                  style: TextStyle(
+                    fontFamily: 'Urbanist-Bold',
+                    fontSize: 14,
+                    color: Color(0xff2BAE66),
                   ),
                 ),
               ],

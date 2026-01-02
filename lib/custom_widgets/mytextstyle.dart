@@ -17,6 +17,7 @@ Text myText45(String title) {
       fontSize: 45,
       fontFamily: 'Urbanist-Bold',
       color: Color(0xff2BAE66),
+      fontWeight: FontWeight.bold
     ),
   );
 }

@@ -31,6 +31,7 @@ class InfoScreen extends StatelessWidget {
                         fontSize: 42,
                         fontFamily: 'Urbanist-Bold',
                         color: Color(0xff2BAE66),
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   ),
