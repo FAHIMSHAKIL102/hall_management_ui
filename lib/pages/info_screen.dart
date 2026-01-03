@@ -50,26 +50,28 @@ class InfoScreen extends StatelessWidget {
             ),
           ),
           SizedBox(height: 99),
-          InkWell(
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => SigninScreen()),
-            ),
-            child: Container(
-              margin: EdgeInsets.only(left: 25),
-              height: 55,
-              width: 381,
-              decoration: BoxDecoration(
-                border: Border.all(color: Color(0xff2BAE66), width: 3),
-                borderRadius: BorderRadius.circular(35),
+          Padding(
+            padding: EdgeInsets.only(left: 25),
+            child: InkWell(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SigninScreen()),
               ),
-              child: Center(
-                child: Text(
-                  'Next',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Color(0xff2BAE66),
-                    fontFamily: 'Urbanist-Bold',
+              child: Container(
+                height: 55,
+                width: 381,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Color(0xff2BAE66), width: 3),
+                  borderRadius: BorderRadius.circular(35),
+                ),
+                child: Center(
+                  child: Text(
+                    'Next',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Color(0xff2BAE66),
+                      fontFamily: 'Urbanist-Bold',
+                    ),
                   ),
                 ),
               ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hall_management_ui/custom_widgets/myTextFormfield.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
 import 'package:hall_management_ui/custom_widgets/mytextstyle.dart';
+import 'package:hall_management_ui/pages/varification_screen.dart';
 import 'package:hall_management_ui/provider/password_visibility_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -13,16 +14,17 @@ class SignupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: SingleChildScrollView(
         child: Column(
-          //mainAxisAlignment: .center,
           crossAxisAlignment: .center,
           children: [
             Container(
-              margin: EdgeInsets.only(top: 203),
+              margin: EdgeInsets.only(top: 177),
+              height: 54,
               child: myText45("Create an account"),
             ),
-            SizedBox(height: 50),
+            SizedBox(height: 58),
             Mytextformfield(
               myController: emailController,
               myHintText: 'Email',
@@ -47,46 +49,55 @@ class SignupScreen extends StatelessWidget {
                 );
               },
             ),
-            Row(
-              mainAxisAlignment: .center,
-              children: [
-                Radio(value: Color(0xff2BAE66), toggleable: true),
-                Text(
-                  'Remember me',
-                  style: TextStyle(fontSize: 12, fontFamily: 'Urbanist'),
-                ),
-              ],
+            SizedBox(
+              height: 14,
+              child: Row(
+                mainAxisAlignment: .center,
+                children: [
+                  Radio(value: Color(0xff2BAE66), toggleable: true),
+                  Text(
+                    'Remember me',
+                    style: TextStyle(fontSize: 12, fontFamily: 'Urbanist'),
+                  ),
+                ],
+              ),
             ),
-            Mybutton(title: 'Sign in'),
+            SizedBox(height: 23),
+            InkWell(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => VarificationScreen()),
+              ),
+              child: Mybutton(title: 'Sign up'),
+            ),
             SizedBox(height: 42),
-            Text(
-              'Forgot password',
-              style: TextStyle(
-                fontSize: 12,
-                fontFamily: 'Urbanist-Bold',
-                color: Color(0xff2BAE66),
+            SizedBox(
+              child: Text(
+                'Forgot password?',
+                style: TextStyle(
+                  fontSize: 12,
+                  fontFamily: 'Urbanist',
+                  color: Color(0xff2BAE66),
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             ),
             SizedBox(height: 177),
-            Row(
-              mainAxisAlignment: .center,
-              children: [
-                Text(
-                  "Don't have an account?",
-                  style: TextStyle(
-                    fontFamily: 'Urbanist-Regular',
-                    fontSize: 14,
+            Container(
+              //margin: EdgeInsets.only(bottom: 45),
+              child: Row(
+                mainAxisAlignment: .center,
+                children: [
+                  Text(
+                    "Already have an account?",
+                    style: TextStyle(
+                      fontFamily: 'Urbanist-Regular',
+                      fontSize: 14,
+                    ),
                   ),
-                ),
-                Text(
-                  'Sign Up',
-                  style: TextStyle(
-                    fontFamily: 'Urbanist-Bold',
-                    fontSize: 14,
-                    color: Color(0xff2BAE66),
-                  ),
-                ),
-              ],
+                  Text('Sign in', style: myTextStyle14()),
+                ],
+              ),
             ),
           ],
         ),

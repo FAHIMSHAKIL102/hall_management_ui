@@ -6,22 +6,25 @@ class Mytextformfield extends StatelessWidget {
   Icon? myPrefixIcon;
   IconButton? mySuffixIcon;
   bool myObscureText;
+  TextInputType? myTextInputType;
   Mytextformfield({
     super.key,
     required this.myController,
     required this.myHintText,
+    required this.myObscureText,
     this.myPrefixIcon,
     this.mySuffixIcon,
-    required this.myObscureText,
+    this.myTextInputType,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(12.5),
+      margin: EdgeInsets.only(left: 24, right: 25, bottom: 25),
       child: TextFormField(
         controller: myController,
         obscureText: myObscureText,
+        keyboardType: myTextInputType,
         decoration: InputDecoration(
           prefixIconColor: WidgetStateColor.resolveWith((state) {
             return state.contains(WidgetState.focused)

@@ -19,41 +19,44 @@ class _SigninScreenState extends State<SigninScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          //mainAxisAlignment: .center,
-          crossAxisAlignment: .center,
-          children: [
-            Container(
-              margin: EdgeInsets.only(top: 203),
-              child: myText45("Let's you in"),
-            ),
-            SizedBox(height: 50),
-            Mytextformfield(
-              myController: emailController,
-              myHintText: 'Email',
-              myObscureText: false,
-              myPrefixIcon: Icon(Icons.email),
-            ),
-            Consumer<PasswordVisibilityProvider>(
-              builder: (BuildContext context, value, child) {
-                return Mytextformfield(
-                  myController: passwordController,
-                  myHintText: 'Password',
-                  myObscureText: value.toggle,
-                  myPrefixIcon: Icon(Icons.lock),
-                  mySuffixIcon: IconButton(
-                    onPressed: () {
-                      value.setToggle();
-                    },
-                    icon: Icon(
-                      value.toggle ? Icons.visibility_off : Icons.visibility,
-                    ),
+      appBar: AppBar(),
+      body: Column(
+        crossAxisAlignment: .center,
+        children: [
+          Container(
+            margin: EdgeInsets.only(top: 110),
+            height: 54,
+            child: myText45("Let's you in"),
+          ),
+          SizedBox(height: 125),
+          Mytextformfield(
+            myController: emailController,
+            myHintText: 'Email',
+            myObscureText: false,
+            myPrefixIcon: Icon(Icons.email),
+            myTextInputType: TextInputType.emailAddress,
+          ),
+          Consumer<PasswordVisibilityProvider>(
+            builder: (BuildContext context, value, child) {
+              return Mytextformfield(
+                myController: passwordController,
+                myHintText: 'Password',
+                myObscureText: value.toggle,
+                myPrefixIcon: Icon(Icons.lock),
+                mySuffixIcon: IconButton(
+                  onPressed: () {
+                    value.setToggle();
+                  },
+                  icon: Icon(
+                    value.toggle ? Icons.visibility_off : Icons.visibility,
                   ),
-                );
-              },
-            ),
-            Row(
+                ),
+              );
+            },
+          ),
+          SizedBox(
+            height: 14,
+            child: Row(
               mainAxisAlignment: .center,
               children: [
                 Radio(value: Color(0xff2BAE66), toggleable: true),
@@ -63,18 +66,25 @@ class _SigninScreenState extends State<SigninScreen> {
                 ),
               ],
             ),
-            Mybutton(title: 'Sign in'),
-            SizedBox(height: 42),
-            Text(
+          ),
+          SizedBox(height: 23),
+          Mybutton(title: 'Sign in'),
+          SizedBox(height: 42),
+          SizedBox(
+            child: Text(
               'Forgot password',
               style: TextStyle(
                 fontSize: 12,
-                fontFamily: 'Urbanist-Bold',
+                fontFamily: 'Urbanist',
                 color: Color(0xff2BAE66),
+                fontWeight: FontWeight.w700,
               ),
             ),
-            SizedBox(height: 177),
-            Row(
+          ),
+          SizedBox(height: 177),
+          Container(
+            margin: EdgeInsets.only(bottom: 45),
+            child: Row(
               mainAxisAlignment: .center,
               children: [
                 Text(
@@ -92,20 +102,12 @@ class _SigninScreenState extends State<SigninScreen> {
                       MaterialPageRoute(builder: (context) => SignupScreen()),
                     );
                   },
-                  child: Text(
-                    'Sign Up',
-                    style: TextStyle(
-                      fontFamily: 'Urbanist-Bold',
-                      fontSize: 14,
-                      color: Color(0xff2BAE66),
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                  child: Text('Sign Up', style: myTextStyle14()),
                 ),
               ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 
-TextStyle myTextStyle45() {
+TextStyle myTextStyle14() {
   return TextStyle(
-    fontSize: 45,
-    fontFamily: 'Urbanist-Bold',
+    fontSize: 14,
+    fontFamily: 'Urbanist',
     color: Color(0xff2BAE66),
-    fontWeight: FontWeight.bold
+    fontWeight: FontWeight.w700,
   );
 }
 
@@ -15,9 +14,9 @@ Text myText45(String title) {
     title,
     style: TextStyle(
       fontSize: 45,
-      fontFamily: 'Urbanist-Bold',
+      fontFamily: 'Urbanist',
       color: Color(0xff2BAE66),
-      fontWeight: FontWeight.bold
+      fontWeight: FontWeight.w700,
     ),
   );
 }
