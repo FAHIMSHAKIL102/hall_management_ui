@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hall_management_ui/custom_widgets/myTextFormfield.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
 import 'package:hall_management_ui/custom_widgets/mytextstyle.dart';
+import 'package:hall_management_ui/pages/pass_reset_confirm_screen.dart';
 import 'package:hall_management_ui/pages/varification_screen.dart';
 import 'package:hall_management_ui/provider/password_visibility_provider.dart';
 import 'package:provider/provider.dart';
@@ -65,7 +66,9 @@ class SetPassScreen extends StatelessWidget {
             InkWell(
               onTap: () => Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => VarificationScreen()),
+                MaterialPageRoute(
+                  builder: (context) => PassResetConfirmScreen(),
+                ),
               ),
               child: Mybutton(title: 'Reset'),
             ),
