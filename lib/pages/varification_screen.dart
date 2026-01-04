@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
 import 'package:hall_management_ui/custom_widgets/mytextstyle.dart';
+import 'package:hall_management_ui/pages/profile_info_screen.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class VarificationScreen extends StatelessWidget {
@@ -43,7 +44,13 @@ class VarificationScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Mybutton(title: 'Verify'),
+            InkWell(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProfileInfoScreen()),
+              ),
+              child: Mybutton(title: 'Verify'),
+            ),
             Container(
               margin: EdgeInsets.only(top: 79),
               height: 14,
