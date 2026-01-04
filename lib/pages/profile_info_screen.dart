@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hall_management_ui/custom_widgets/myTextFormfield.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
+import 'package:hall_management_ui/pages/confirmation_screen.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
 class ProfileInfoScreen extends StatelessWidget {
@@ -53,7 +54,11 @@ class ProfileInfoScreen extends StatelessWidget {
                     child: CircleAvatar(
                       radius: 20,
                       backgroundColor: Color(0xff2BAE66),
-                      child: Icon(Icons.camera_alt, color: Color(0xffFFFFFF),size: 16,),
+                      child: Icon(
+                        Icons.camera_alt,
+                        color: Color(0xffFFFFFF),
+                        size: 16,
+                      ),
                     ),
                   ),
                 ],
@@ -140,7 +145,15 @@ class ProfileInfoScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 31),
-            Mybutton(title: 'Sign up'),
+            InkWell(
+              onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => ConfirmationScreen()),
+                );
+              },
+              child: Mybutton(title: 'Sign up'),
+            ),
           ],
         ),
       ),
