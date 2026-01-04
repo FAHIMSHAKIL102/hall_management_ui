@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hall_management_ui/custom_widgets/myTextFormfield.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
 import 'package:hall_management_ui/custom_widgets/mytextstyle.dart';
+import 'package:hall_management_ui/pages/forgot_pass_varification_screen.dart';
 
 class ForgotPassScreen extends StatelessWidget {
   ForgotPassScreen({super.key});
@@ -28,7 +29,15 @@ class ForgotPassScreen extends StatelessWidget {
             myPrefixIcon: Icon(Icons.email),
           ),
           SizedBox(height: 18),
-          Mybutton(title: 'Continue'),
+          InkWell(
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ForgotPassVarificationScreen(),
+              ),
+            ),
+            child: Mybutton(title: 'Continue'),
+          ),
           SizedBox(height: 288),
           Container(
             margin: EdgeInsets.only(bottom: 45),
