@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
 import 'package:hall_management_ui/custom_widgets/mytextstyle.dart';
 import 'package:hall_management_ui/pages/profile_info_screen.dart';
+import 'package:hall_management_ui/pages/set_pass_screen.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class ForgotPassVarificationScreen extends StatelessWidget {
@@ -48,7 +49,7 @@ class ForgotPassVarificationScreen extends StatelessWidget {
             InkWell(
               onTap: () => Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => ProfileInfoScreen()),
+                MaterialPageRoute(builder: (context) => SetPassScreen()),
               ),
               child: Mybutton(title: 'Verify'),
             ),

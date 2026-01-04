@@ -9,7 +9,7 @@ class Mytextformfield extends StatelessWidget {
   TextInputType? myTextInputType;
   Mytextformfield({
     super.key,
-    required this.myController,
+    this.myController,
     required this.myHintText,
     required this.myObscureText,
     this.myPrefixIcon,
