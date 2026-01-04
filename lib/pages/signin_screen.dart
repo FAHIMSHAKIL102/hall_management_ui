@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hall_management_ui/custom_widgets/myTextFormfield.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
 import 'package:hall_management_ui/custom_widgets/mytextstyle.dart';
+import 'package:hall_management_ui/pages/forgot_pass_screen.dart';
 import 'package:hall_management_ui/pages/signup_screen.dart';
 import 'package:hall_management_ui/provider/password_visibility_provider.dart';
 import 'package:provider/provider.dart';
@@ -24,8 +25,8 @@ class _SigninScreenState extends State<SigninScreen> {
         crossAxisAlignment: .center,
         children: [
           Container(
-            margin: EdgeInsets.only(top: 110),
-            height: 54,
+            margin: EdgeInsets.only(top: 104),
+            height: 60,
             child: myText45("Let's you in"),
           ),
           SizedBox(height: 125),
@@ -71,13 +72,19 @@ class _SigninScreenState extends State<SigninScreen> {
           Mybutton(title: 'Sign in'),
           SizedBox(height: 42),
           SizedBox(
-            child: Text(
-              'Forgot password',
-              style: TextStyle(
-                fontSize: 12,
-                fontFamily: 'Urbanist',
-                color: Color(0xff2BAE66),
-                fontWeight: FontWeight.w700,
+            child: InkWell(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ForgotPassScreen()),
+              ),
+              child: Text(
+                'Forgot password?',
+                style: TextStyle(
+                  fontSize: 12,
+                  fontFamily: 'Urbanist',
+                  color: Color(0xff2BAE66),
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             ),
           ),

@@ -70,21 +70,9 @@ class SignupScreen extends StatelessWidget {
               ),
               child: Mybutton(title: 'Sign up'),
             ),
-            SizedBox(height: 42),
-            SizedBox(
-              child: Text(
-                'Forgot password?',
-                style: TextStyle(
-                  fontSize: 12,
-                  fontFamily: 'Urbanist',
-                  color: Color(0xff2BAE66),
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-            ),
-            SizedBox(height: 177),
+            SizedBox(height: 233),
             Container(
-              //margin: EdgeInsets.only(bottom: 45),
+              margin: EdgeInsets.only(bottom: 45),
               child: Row(
                 mainAxisAlignment: .center,
                 children: [

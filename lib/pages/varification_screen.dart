@@ -16,12 +16,13 @@ class VarificationScreen extends StatelessWidget {
           crossAxisAlignment: .center,
           children: [
             Container(
-              margin: EdgeInsets.only(top: 154),
+              margin: EdgeInsets.only(top: 156),
               height: 60,
               child: myText45('Please verify'),
             ),
             SizedBox(height: 40),
             Container(
+              height: 17,
               child: Text('Please Check your email for the varification code'),
             ),
             SizedBox(height: 48),

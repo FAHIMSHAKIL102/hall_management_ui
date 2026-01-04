@@ -8,10 +8,13 @@ class ConfirmationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(crossAxisAlignment: .center,
+      body: Column(
+        crossAxisAlignment: .center,
         children: [
-          Container(margin: EdgeInsets.only(top: 157,left: 23),
-            child: Image(image: AssetImage('assets/images/Group.png'))),
+          Container(
+            margin: EdgeInsets.only(top: 157, left: 23),
+            child: Image(image: AssetImage('assets/images/Group.png')),
+          ),
           SizedBox(height: 83),
           myText45("You're all set"),
           SizedBox(height: 65),
