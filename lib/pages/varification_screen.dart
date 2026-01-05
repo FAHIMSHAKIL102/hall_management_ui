@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
 import 'package:hall_management_ui/custom_widgets/mytextstyle.dart';
 import 'package:hall_management_ui/pages/profile_info_screen.dart';
+import 'package:hall_management_ui/pages/signin_screen.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class VarificationScreen extends StatelessWidget {
@@ -82,7 +83,13 @@ class VarificationScreen extends StatelessWidget {
                       fontSize: 14,
                     ),
                   ),
-                  Text('Sign in', style: myTextStyle14()),
+                  InkWell(
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SigninScreen()),
+                    ),
+                    child: Text('Sign in', style: myTextStyle14()),
+                  ),
                 ],
               ),
             ),

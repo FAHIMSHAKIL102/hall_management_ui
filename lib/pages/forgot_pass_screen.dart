@@ -3,6 +3,7 @@ import 'package:hall_management_ui/custom_widgets/myTextFormfield.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
 import 'package:hall_management_ui/custom_widgets/mytextstyle.dart';
 import 'package:hall_management_ui/pages/forgot_pass_varification_screen.dart';
+import 'package:hall_management_ui/pages/signin_screen.dart';
 
 class ForgotPassScreen extends StatelessWidget {
   ForgotPassScreen({super.key});
@@ -21,7 +22,10 @@ class ForgotPassScreen extends StatelessWidget {
               child: myText45('Forgot Password?'),
             ),
             SizedBox(height: 80),
-            Container(height: 17, child: Text('Please enter your email address')),
+            Container(
+              height: 17,
+              child: Text('Please enter your email address'),
+            ),
             SizedBox(height: 24),
             Mytextformfield(
               myController: emailController,
@@ -52,7 +56,13 @@ class ForgotPassScreen extends StatelessWidget {
                       fontSize: 14,
                     ),
                   ),
-                  Text('Sign in', style: myTextStyle14()),
+                  InkWell(
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SigninScreen()),
+                    ),
+                    child: Text('Sign in', style: myTextStyle14()),
+                  ),
                 ],
               ),
             ),

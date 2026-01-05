@@ -3,6 +3,7 @@ import 'package:hall_management_ui/custom_widgets/mybutton.dart';
 import 'package:hall_management_ui/custom_widgets/mytextstyle.dart';
 import 'package:hall_management_ui/pages/profile_info_screen.dart';
 import 'package:hall_management_ui/pages/set_pass_screen.dart';
+import 'package:hall_management_ui/pages/signin_screen.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class ForgotPassVarificationScreen extends StatelessWidget {
@@ -77,13 +78,19 @@ class ForgotPassVarificationScreen extends StatelessWidget {
                 mainAxisAlignment: .center,
                 children: [
                   Text(
-                    "Already have an account?",
+                    "Remember your password?",
                     style: TextStyle(
                       fontFamily: 'Urbanist-Regular',
                       fontSize: 14,
                     ),
                   ),
-                  Text('Sign in', style: myTextStyle14()),
+                  InkWell(
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SigninScreen()),
+                    ),
+                    child: Text('Sign in', style: myTextStyle14()),
+                  ),
                 ],
               ),
             ),

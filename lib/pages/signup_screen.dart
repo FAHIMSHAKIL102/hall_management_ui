@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hall_management_ui/custom_widgets/myTextFormfield.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
 import 'package:hall_management_ui/custom_widgets/mytextstyle.dart';
+import 'package:hall_management_ui/pages/signin_screen.dart';
 import 'package:hall_management_ui/pages/varification_screen.dart';
 import 'package:hall_management_ui/provider/password_visibility_provider.dart';
 import 'package:provider/provider.dart';
@@ -83,7 +84,13 @@ class SignupScreen extends StatelessWidget {
                       fontSize: 14,
                     ),
                   ),
-                  Text('Sign in', style: myTextStyle14()),
+                  InkWell(
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SigninScreen()),
+                    ),
+                    child: Text('Sign in', style: myTextStyle14()),
+                  ),
                 ],
               ),
             ),
