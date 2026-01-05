@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class Mybutton extends StatelessWidget {
+class MybuttonW90 extends StatelessWidget {
   final String title;
-  const Mybutton({super.key, required this.title});
+  const MybuttonW90({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -10,17 +10,21 @@ class Mybutton extends StatelessWidget {
       height: 55,
       width: 381,
       decoration: BoxDecoration(
-        color: Color(0xff2BAE66),
+        color: WidgetStateColor.resolveWith((state) {
+            return state.contains(WidgetState.focused)
+                ? Color(0xff2BAE66)
+                : Color(0xff646464);
+          }),
         borderRadius: BorderRadius.circular(35),
       ),
       child: Center(
         child: Text(
           title,
           style: TextStyle(
-            fontSize: 16,
+            fontSize: 15,
             fontFamily: 'Urbanist',
             color: Color(0xffFFFFFF),
-            fontWeight: FontWeight.w500
+            fontWeight: FontWeight.w600
           ),
         ),
       ),
