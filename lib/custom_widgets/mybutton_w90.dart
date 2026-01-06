@@ -8,13 +8,9 @@ class MybuttonW90 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 55,
-      width: 381,
+      width: 90,
       decoration: BoxDecoration(
-        color: WidgetStateColor.resolveWith((state) {
-            return state.contains(WidgetState.focused)
-                ? Color(0xff2BAE66)
-                : Color(0xff646464);
-          }),
+        color:  Color(0xff2BAE66),
         borderRadius: BorderRadius.circular(35),
       ),
       child: Center(

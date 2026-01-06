@@ -3,6 +3,7 @@ import 'package:hall_management_ui/custom_widgets/myTextFormfield.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
 import 'package:hall_management_ui/custom_widgets/mytextstyle.dart';
 import 'package:hall_management_ui/pages/forgot_pass_screen.dart';
+import 'package:hall_management_ui/pages/home_screen.dart';
 import 'package:hall_management_ui/pages/signup_screen.dart';
 import 'package:hall_management_ui/provider/password_visibility_provider.dart';
 import 'package:provider/provider.dart';
@@ -69,7 +70,13 @@ class _SigninScreenState extends State<SigninScreen> {
             ),
           ),
           SizedBox(height: 23),
-          Mybutton(title: 'Sign in'),
+          InkWell(
+            onTap: () => Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => HomeScreen()),
+            ),
+            child: Mybutton(title: 'Sign in'),
+          ),
           SizedBox(height: 42),
           SizedBox(
             child: InkWell(
