@@ -1,17 +1,257 @@
 import 'package:flutter/material.dart';
-import 'package:hall_management_ui/custom_widgets/mybutton_w90.dart';
+import 'package:hall_management_ui/custom_widgets/mybutton_w124.dart';
+import 'package:hall_management_ui/provider/button_color_provider.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        actions: [Container(width: 350,
-          child: SearchBar(leading: Icon(Icons.search), hintText: 'Search'))],
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          toolbarHeight: 200,
+          flexibleSpace: SafeArea(
+            child: Container(
+              child: Column(
+                crossAxisAlignment: .start,
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(left: 23),
+                    child: Row(
+                      children: [
+                        Container(
+                          height: 34,
+                          width: 34,
+                          child: Image(
+                            image: AssetImage('assets/images/diulogo.png'),
+                          ),
+                        ),
+                        SizedBox(width: 20),
+                        Text(
+                          'DIU HALL',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 28, left: 23),
+                    height: 41,
+                    width: 307,
+                    child: Text(
+                      'Hello, Kabir!',
+                      style: TextStyle(
+                        fontSize: 34,
+                        fontWeight: FontWeight.w700,
+                        color: Color(0xff2BAE66),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 18, left: 24, bottom: 23),
+                    width: 381,
+                    height: 56,
+                    color: Color(0xffFAFAFA),
+                    child: SearchBar(
+                      leading: Icon(Icons.search),
+                      hintText: 'Search',
+                      shape: WidgetStatePropertyAll(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      elevation: WidgetStatePropertyAll(0),
+                      trailing: [
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.format_list_bulleted,
+                            color: Color(0xff2BAE66),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          bottom: PreferredSize(
+            preferredSize: Size.fromHeight(40),
+            child: Consumer<ButtonColorProvider>(
+              builder: (context, provider, child) {
+                return TabBar(
+                  onTap: (index) => provider.setIndex(index),
+                  indicatorColor: Colors.transparent,
+                  dividerHeight: 0,
+                  tabs: [
+                    Tab(
+                      child: MybuttonW124(
+                        title: 'Available',
+                        index: 0,
+                        currentIndex: provider.currentIndex,
+                      ),
+                    ),
+                    Tab(
+                      child: MybuttonW124(
+                        title: 'Booked',
+                        index: 1,
+                        currentIndex: provider.currentIndex,
+                      ),
+                    ),
+                    Tab(
+                      child: MybuttonW124(
+                        title: 'All Rooms',
+                        index: 2,
+                        currentIndex: provider.currentIndex,
+                      ),
+                    ),
+                  ],
+                );
+              },
+            ),
+          ),
+        ),
+        body: TabBarView(
+          children: [
+            //Tab1
+            TabOneWidget(),
+
+            //Tab2
+            Text('Not Available Rooms'),
+
+            //Tab3
+            TabOneWidget(),
+          ],
+        ),
       ),
-      body: Column(children: [MybuttonW90(title: 'ab')]),
+    );
+  }
+}
+
+class TabOneWidget extends StatelessWidget {
+  const TabOneWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Color(0xffF5F5F6),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 401,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return Container(
+                    margin: EdgeInsets.only(
+                      top: 23,
+                      left: 21,
+                      right: 7,
+                      bottom: 33,
+                    ),
+                    height: 401,
+                    width: 302,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage('assets/images/Room.png'),
+                      ),
+                      borderRadius: BorderRadius.circular(45),
+                    ),
+                  );
+                },
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 23),
+              child: Row(
+                mainAxisAlignment: .spaceBetween,
+                children: [
+                  Text(
+                    'Available rooms',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+                  ),
+                  Text(
+                    'See All',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xff2BAE66),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 40),
+            ...List.generate(
+              5,
+              (index) => Container(
+                margin: EdgeInsets.only(bottom: 20),
+                height: 141,
+                width: 381,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Color(0xffFFFFFF),
+                ),
+                child: Row(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(top: 21, left: 24),
+                      height: 100,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage('assets/images/Room2.png'),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 37, left: 30),
+                      child: Column(
+                        crossAxisAlignment: .start,
+                        children: [
+                          Text(
+                            'Room 507 West',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          Text('YKSG-Ext 1'),
+                          Row(
+                            children: [
+                              Text(
+                                '3000TK.',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w900,
+                                  color: Color(0xff2BAE66),
+                                ),
+                              ),
+                              Text('month'),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
