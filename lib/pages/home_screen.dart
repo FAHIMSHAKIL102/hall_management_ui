@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton_w124.dart';
+import 'package:hall_management_ui/custom_widgets/mybutton_w90.dart';
 import 'package:hall_management_ui/provider/button_color_provider.dart';
+import 'package:hall_management_ui/provider/range_slider_provider.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -70,7 +72,9 @@ class HomeScreen extends StatelessWidget {
                       elevation: WidgetStatePropertyAll(0),
                       trailing: [
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            SearchFilter(context);
+                          },
                           icon: Icon(
                             Icons.format_list_bulleted,
                             color: Color(0xff2BAE66),
@@ -132,6 +136,118 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  Future<dynamic> SearchFilter(BuildContext context) {
+    return showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return SizedBox(
+          child: Column(crossAxisAlignment: .start,
+            children: [
+              Container(
+                margin: EdgeInsets.only(top: 30, left: 163, bottom: 23),
+                child: Text(
+                  'Filter Hall',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
+                ),
+              ),
+              Divider(),
+              SizedBox(height: 24),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 23),
+                child: Row(
+                  mainAxisAlignment: .spaceBetween,
+                  children: [
+                    Text(
+                      'Branch',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    Text(
+                      'See All',
+                      style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w700,
+                        color: Color(0xff2BAE66),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 18, left: 23),
+                child: Row(mainAxisAlignment: .spaceAround,
+                  children: [
+                    MybuttonW90(title: 'Extension 1'),
+                    MybuttonW90(title: 'Extension 2'),
+                    MybuttonW90(title: 'Extension 3'),
+                    MybuttonW90(title: 'Extension 4'),
+                  ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 27, left: 23),
+                child: Text(
+                  'Seat Category',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 18, left: 23),
+                child: Row(mainAxisAlignment: .spaceAround,
+                  children: [
+                    MybuttonW90(title: 'Single'),
+                    MybuttonW90(title: 'Double'),
+                    MybuttonW90(title: 'Three'),
+                    MybuttonW90(title: 'Four'),
+                  ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 27, left: 23),
+                child: Text(
+                  'Price Range',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.all(5),
+                child: Column(
+                  children: [
+                    Consumer<RangeSliderProvider>(
+                      builder: (context, provider, child) {
+                        return Column(
+                          children: [
+                            Text(
+                              'Value: ${provider.currentValue.toInt()}',
+                              style: TextStyle(fontSize: 20),
+                            ),
+                            SizedBox(height: 20),
+                            Slider(
+                              value: provider.currentValue,
+                              min: 0,
+                              max: 10000,
+                              divisions: 1,
+                              label: provider.currentValue.round().toString(),
+                              onChanged: (newValue) {
+                                provider.updateValue(newValue);
+                              },
+                            ),
+                          ],
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }

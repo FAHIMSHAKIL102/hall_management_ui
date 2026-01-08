@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hall_management_ui/pages/splash_screen.dart';
 import 'package:hall_management_ui/provider/button_color_provider.dart';
 import 'package:hall_management_ui/provider/password_visibility_provider.dart';
+import 'package:hall_management_ui/provider/range_slider_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => PasswordVisibilityProvider()),
         ChangeNotifierProvider(create: (context) => ButtonColorProvider()),
+        ChangeNotifierProvider(create: (context) => RangeSliderProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
