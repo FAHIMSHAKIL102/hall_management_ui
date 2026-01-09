@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
 class RangeSliderProvider extends ChangeNotifier {
-  double _currentValue = 0.0;
-  double get currentValue => _currentValue;
-
-  void updateValue(double newValue) {
+  RangeValues _currentValue = RangeValues(0, 10000);
+  RangeValues get currentValue => _currentValue;
+  void updateValue(RangeValues newValue) {
     _currentValue = newValue;
     notifyListeners();
   }

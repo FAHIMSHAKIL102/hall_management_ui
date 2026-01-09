@@ -144,7 +144,8 @@ class HomeScreen extends StatelessWidget {
       context: context,
       builder: (context) {
         return SizedBox(
-          child: Column(crossAxisAlignment: .start,
+          child: Column(
+            crossAxisAlignment: .start,
             children: [
               Container(
                 margin: EdgeInsets.only(top: 30, left: 163, bottom: 23),
@@ -180,7 +181,8 @@ class HomeScreen extends StatelessWidget {
               ),
               Container(
                 margin: EdgeInsets.only(top: 18, left: 23),
-                child: Row(mainAxisAlignment: .spaceAround,
+                child: Row(
+                  mainAxisAlignment: .spaceAround,
                   children: [
                     MybuttonW90(title: 'Extension 1'),
                     MybuttonW90(title: 'Extension 2'),
@@ -198,7 +200,8 @@ class HomeScreen extends StatelessWidget {
               ),
               Container(
                 margin: EdgeInsets.only(top: 18, left: 23),
-                child: Row(mainAxisAlignment: .spaceAround,
+                child: Row(
+                  mainAxisAlignment: .spaceAround,
                   children: [
                     MybuttonW90(title: 'Single'),
                     MybuttonW90(title: 'Double'),
@@ -223,19 +226,29 @@ class HomeScreen extends StatelessWidget {
                         return Column(
                           children: [
                             Text(
-                              'Value: ${provider.currentValue.toInt()}',
-                              style: TextStyle(fontSize: 20),
+                              'Range: ${provider.currentValue.start.toInt()}-${provider.currentValue.end.toInt()}',
                             ),
                             SizedBox(height: 20),
-                            Slider(
-                              value: provider.currentValue,
-                              min: 0,
-                              max: 10000,
-                              divisions: 1,
-                              label: provider.currentValue.round().toString(),
-                              onChanged: (newValue) {
-                                provider.updateValue(newValue);
-                              },
+                            SliderTheme(
+                              data: SliderThemeData(
+                                inactiveTrackColor: Color(0xffFFFFFF),
+                                valueIndicatorColor: Color(0xff2BAE66),
+                                overlayColor: Color(0xff2BAE66)
+                              ),
+                              child: RangeSlider(
+                                activeColor:Color(0xff2BAE66) ,
+                                values: provider.currentValue,
+                                min: 0,
+                                max: 10000,
+                                divisions: 10000,
+                                labels: RangeLabels(
+                                  provider.currentValue.start.toString(),
+                                  provider.currentValue.end.toString(),
+                                ),
+                                onChanged: (newValue) {
+                                  provider.updateValue(newValue);
+                                },
+                              ),
                             ),
                           ],
                         );
