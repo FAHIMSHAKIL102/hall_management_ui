@@ -233,10 +233,10 @@ class HomeScreen extends StatelessWidget {
                               data: SliderThemeData(
                                 inactiveTrackColor: Color(0xffFFFFFF),
                                 valueIndicatorColor: Color(0xff2BAE66),
-                                overlayColor: Color(0xff2BAE66)
+                                overlayColor: Color(0xff2BAE66),
                               ),
                               child: RangeSlider(
-                                activeColor:Color(0xff2BAE66) ,
+                                activeColor: Color(0xff2BAE66),
                                 values: provider.currentValue,
                                 min: 0,
                                 max: 10000,
@@ -248,6 +248,24 @@ class HomeScreen extends StatelessWidget {
                                 onChanged: (newValue) {
                                   provider.updateValue(newValue);
                                 },
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                            Container(
+                              margin: EdgeInsets.only(top: 27, left: 23),
+                              child: Text(
+                                'Facilities',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(top: 18, left: 23),
+                              child: Row(
+                                mainAxisAlignment: .spaceAround,
+                                children: [],
                               ),
                             ),
                           ],
