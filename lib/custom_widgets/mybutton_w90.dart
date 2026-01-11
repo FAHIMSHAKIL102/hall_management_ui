@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 
 class MybuttonW90 extends StatelessWidget {
   final String title;
-  const MybuttonW90({super.key, required this.title});
+  final int index;
+  final int currentIndex;
+  bool get isSelected=>currentIndex==index;
+  const MybuttonW90({super.key, required this.title,required this.index, required this.currentIndex});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +13,8 @@ class MybuttonW90 extends StatelessWidget {
       height: 55,
       width: 90,
       decoration: BoxDecoration(
-        color:  Color(0xff2BAE66),
+        border: Border.all(color: Color(0xff2BAE66), width: 2),
+        color: isSelected? Color(0xff2BAE66):Color(0xffFFFFFF),
         borderRadius: BorderRadius.circular(35),
       ),
       child: Center(
@@ -19,8 +23,8 @@ class MybuttonW90 extends StatelessWidget {
           style: TextStyle(
             fontSize: 15,
             fontFamily: 'Urbanist',
-            color: Color(0xffFFFFFF),
-            fontWeight: FontWeight.w600
+            color: isSelected? Color(0xffFFFFFF): Color(0xff2BAE66),
+            fontWeight: FontWeight.w600,
           ),
         ),
       ),
