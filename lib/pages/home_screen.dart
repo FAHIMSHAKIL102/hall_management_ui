@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton_w124.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton_w90.dart';
+import 'package:hall_management_ui/pages/search_result_screen.dart';
 import 'package:hall_management_ui/provider/button_color_provider.dart';
 import 'package:hall_management_ui/provider/facility_provider.dart';
 import 'package:hall_management_ui/provider/range_slider_provider.dart';
@@ -9,8 +10,6 @@ import 'package:provider/provider.dart';
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
   final List<String> facilities = const ['WiFi', 'Gym', 'Food', 'Monitoring'];
-  bool? isBool = false;
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -387,24 +386,32 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Container(
-                            height: 59,
-                            width: 182,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              border: Border.all(
-                                color: Color(0xff2BAE66),
-                                width: 2,
+                          InkWell(
+                            onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SearchResultScreen(),
                               ),
-                              color: Color(0xff2BAE66),
                             ),
-                            child: Center(
-                              child: Text(
-                                'Apply Filter',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w700,
-                                  color: Color(0xffFFFFFF),
+                            child: Container(
+                              height: 59,
+                              width: 182,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                border: Border.all(
+                                  color: Color(0xff2BAE66),
+                                  width: 2,
+                                ),
+                                color: Color(0xff2BAE66),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  'Apply Filter',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w700,
+                                    color: Color(0xffFFFFFF),
+                                  ),
                                 ),
                               ),
                             ),
