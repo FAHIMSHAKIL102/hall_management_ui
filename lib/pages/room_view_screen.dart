@@ -644,6 +644,7 @@ class RoomViewScreen extends StatelessWidget {
                             ],
                           ),
                         ),
+                        SizedBox(height: 24),
                         Container(
                           width: 381,
                           height: 52,
@@ -651,18 +652,21 @@ class RoomViewScreen extends StatelessWidget {
                             color: Color(0xff2BAE66).withValues(alpha: .13),
                             borderRadius: BorderRadius.circular(30),
                           ),
-                          child: Row(mainAxisAlignment: .center,
+                          child: Row(
+                            mainAxisAlignment: .center,
                             children: [
-                               Text(
-                                 'More',
-                                 style: TextStyle(
-                                   color: Color(0xff2BAE66),
-                                   fontWeight: FontWeight.w700,
-                                   fontSize: 15
-                                 ),
-                               ),
-                            Icon(Icons.keyboard_arrow_down_outlined,
-                            color:Color(0xff2BAE66) ,)
+                              Text(
+                                'More',
+                                style: TextStyle(
+                                  color: Color(0xff2BAE66),
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 15,
+                                ),
+                              ),
+                              Icon(
+                                Icons.keyboard_arrow_down_outlined,
+                                color: Color(0xff2BAE66),
+                              ),
                             ],
                           ),
                         ),
@@ -701,7 +705,232 @@ class RoomViewScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                MybuttonW220(title: 'Book Now!'),
+                InkWell(
+                  onTap: () {
+                    showModalBottomSheet(
+                      isScrollControlled: true,
+                      context: context,
+                      builder: (context) {
+                        return SizedBox(
+                          height: 650,
+                          width: double.infinity,
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(top: 45),
+                                child: Text(
+                                  'Select your seat',
+                                  style: TextStyle(
+                                    fontSize: 31,
+                                    fontWeight: FontWeight.w700,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: 42),
+                              Row(
+                                mainAxisAlignment: .spaceEvenly,
+                                children: [
+                                  Container(
+                                    width: 173,
+                                    height: 167,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      border: Border.all(
+                                        color: Color(0xffD9D9D9),
+                                      ),
+                                    ),
+                                    child: Column(
+                                      mainAxisAlignment: .center,
+                                      crossAxisAlignment: .center,
+                                      children: [
+                                        Container(
+                                          height: 24,
+                                          width: 24,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(
+                                              100,
+                                            ),
+                                            border: Border.all(
+                                              color: Color(0xffD9D9D9),
+                                            ),
+                                          ),
+                                          child: Icon(
+                                            Icons.check,
+                                            color: Color(0xffD9D9D9),
+                                          ),
+                                        ),
+                                        Text(
+                                          'Seat 1',
+                                          style: TextStyle(
+                                            fontSize: 25,
+                                            fontWeight: FontWeight.w700,
+                                            color: Color(0xffD9D9D9),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 173,
+                                    height: 167,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      border: Border.all(
+                                        color: Color(0xff2BAE66),
+                                        width: 1,
+                                      ),
+                                    ),
+                                    child: Column(
+                                      mainAxisAlignment: .center,
+                                      crossAxisAlignment: .center,
+                                      children: [
+                                        Container(
+                                          height: 24,
+                                          width: 24,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(
+                                              100,
+                                            ),
+                                            border: Border.all(
+                                              color: Color(0xff2BAE66),
+                                            ),
+                                          ),
+                                          child: Icon(
+                                            Icons.check,
+                                            color: Color(0xff2BAE66),
+                                          ),
+                                        ),
+                                        Text(
+                                          'Seat 2',
+                                          style: TextStyle(
+                                            fontSize: 25,
+                                            fontWeight: FontWeight.w700,
+                                            color: Color(0xff2BAE66),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 40),
+                              Row(
+                                mainAxisAlignment: .spaceEvenly,
+                                children: [
+                                  Container(
+                                    width: 173,
+                                    height: 167,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      border: Border.all(
+                                        color: Color(0xffFFB1B1),
+                                      ),
+                                    ),
+                                    child: Column(
+                                      mainAxisAlignment: .center,
+                                      crossAxisAlignment: .center,
+                                      children: [
+                                        Container(
+                                          height: 24,
+                                          width: 24,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(
+                                              100,
+                                            ),
+                                            border: Border.all(
+                                              color: Color(0xffFFB1B1),
+                                            ),
+                                          ),
+                                          child: Icon(
+                                            Icons.check,
+                                            color: Color(0xffFFB1B1),
+                                          ),
+                                        ),
+                                        Text(
+                                          'Seat 3',
+                                          style: TextStyle(
+                                            fontSize: 25,
+                                            fontWeight: FontWeight.w700,
+                                            color: Color(0xffFFB1B1),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 173,
+                                    height: 167,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      border: Border.all(
+                                        color: Color(0xffFFB1B1),
+                                      ),
+                                    ),
+                                    child: Column(
+                                      mainAxisAlignment: .center,
+                                      crossAxisAlignment: .center,
+                                      children: [
+                                        Container(
+                                          height: 24,
+                                          width: 24,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(
+                                              100,
+                                            ),
+                                            border: Border.all(
+                                              color: Color(0xffFFB1B1),
+                                            ),
+                                          ),
+                                          child: Icon(
+                                            Icons.check,
+                                            color: Color(0xffFFB1B1),
+                                          ),
+                                        ),
+                                        Text(
+                                          'Seat 4',
+                                          style: TextStyle(
+                                            fontSize: 25,
+                                            fontWeight: FontWeight.w700,
+                                            color: Color(0xffFFB1B1),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 25),
+                              Row(
+                                mainAxisAlignment: .spaceEvenly,
+                                children: [
+                                  Container(
+                                    child: Column(
+                                      crossAxisAlignment: .start,
+                                      children: [
+                                        Text(
+                                          '3000TK.',
+                                          style: TextStyle(
+                                            fontSize: 30,
+                                            fontWeight: FontWeight.w900,
+                                            color: Color(0xff2BAE66),
+                                          ),
+                                        ),
+                                        Text('/month'),
+                                      ],
+                                    ),
+                                  ),
+                                  MybuttonW220(title: 'Pay Now'),
+                                ],
+                              ),
+                              SizedBox(height: 50),
+                            ],
+                          ),
+                        );
+                      },
+                    );
+                  },
+                  child: MybuttonW220(title: 'Book Now!'),
+                ),
               ],
             ),
           ),
