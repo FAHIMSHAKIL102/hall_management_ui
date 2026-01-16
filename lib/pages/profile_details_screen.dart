@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hall_management_ui/pages/change_password_screen.dart';
 import 'package:hall_management_ui/pages/edit_profile_screen.dart';
 import 'package:hall_management_ui/pages/payment_history_screen.dart';
 import 'package:hall_management_ui/pages/signin_screen.dart';
@@ -159,7 +160,7 @@ class ProfileDetailsScreen extends StatelessWidget {
                 InkWell(onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => EditProfileScreen(),
+                      builder: (context) => ChangePasswordScreen(),
                     ),
                   ),
                   child: Row(
