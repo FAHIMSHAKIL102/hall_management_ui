@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton_w220.dart';
+import 'package:hall_management_ui/pages/payment_screen.dart';
 
 class RoomViewScreen extends StatelessWidget {
   const RoomViewScreen({super.key});
@@ -919,7 +920,15 @@ class RoomViewScreen extends StatelessWidget {
                                       ],
                                     ),
                                   ),
-                                  MybuttonW220(title: 'Pay Now'),
+                                  InkWell(
+                                    onTap: () => Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => PaymentScreen(),
+                                      ),
+                                    ),
+                                    child: MybuttonW220(title: 'Pay Now'),
+                                  ),
                                 ],
                               ),
                               SizedBox(height: 50),
