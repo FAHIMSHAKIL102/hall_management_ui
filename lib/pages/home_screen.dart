@@ -8,7 +8,7 @@ import 'package:hall_management_ui/provider/range_slider_provider.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
+  const HomeScreen({super.key});
   final List<String> facilities = const ['WiFi', 'Gym', 'Food', 'Monitoring'];
   @override
   Widget build(BuildContext context) {

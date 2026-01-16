@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
+import 'package:hall_management_ui/pages/profile_details_screen.dart';
 
 class OneCardDetailsScreen extends StatelessWidget {
   const OneCardDetailsScreen({super.key});
@@ -61,7 +62,7 @@ class OneCardDetailsScreen extends StatelessWidget {
           InkWell(
             onTap: () => Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => OneCardDetailsScreen()),
+              MaterialPageRoute(builder: (context) => ProfileDetailsScreen()),
             ),
             child: Mybutton(title: 'Continue'),
           ),

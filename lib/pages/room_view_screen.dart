@@ -900,7 +900,7 @@ class RoomViewScreen extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 25),
+                              SizedBox(height: 45),
                               Row(
                                 mainAxisAlignment: .spaceEvenly,
                                 children: [
@@ -931,7 +931,6 @@ class RoomViewScreen extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 50),
                             ],
                           ),
                         );
