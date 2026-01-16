@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hall_management_ui/custom_widgets/myTextFormfield.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
-import 'package:hall_management_ui/pages/edit_profile_screen.dart';
 import 'package:hall_management_ui/pages/profile_details_screen.dart';
 import 'package:hall_management_ui/provider/password_visibility_provider.dart';
 import 'package:provider/provider.dart';
@@ -91,10 +90,55 @@ class ChangePasswordScreen extends StatelessWidget {
             ),
             SizedBox(height: 44),
             InkWell(
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ProfileDetailsScreen()),
-              ),
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      actions: [
+                        SizedBox(
+                          height: 450,
+                          width: 375,
+                          child: Column(
+                            children: [
+                              SizedBox(height: 56),
+                              Center(
+                                child: SizedBox(
+                                  height: 246,
+                                  width: 215,
+                                  child: Image(
+                                    image: AssetImage(
+                                      'assets/images/Group.png',
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              InkWell(
+                                onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        ProfileDetailsScreen(),
+                                  ),
+                                ),
+                                child: SizedBox(
+                                  width: 375,
+                                  child: Image(
+                                    image: AssetImage(
+                                      'assets/images/PasswordResetSuccessful.png',
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: 67),
+                            ],
+                          ),
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
               child: Mybutton(title: 'Update'),
             ),
           ],
