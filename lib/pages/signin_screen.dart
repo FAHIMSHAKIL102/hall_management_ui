@@ -4,7 +4,6 @@ import 'package:hall_management_ui/custom_widgets/mybutton.dart';
 import 'package:hall_management_ui/custom_widgets/mytextstyle.dart';
 import 'package:hall_management_ui/pages/bottom_navigation_screen.dart';
 import 'package:hall_management_ui/pages/forgot_pass_screen.dart';
-import 'package:hall_management_ui/pages/home_screen.dart';
 import 'package:hall_management_ui/pages/signup_screen.dart';
 import 'package:hall_management_ui/provider/password_visibility_provider.dart';
 import 'package:provider/provider.dart';
@@ -19,6 +18,7 @@ class SigninScreen extends StatefulWidget {
 class _SigninScreenState extends State<SigninScreen> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  ValueNotifier<bool> isRememberButtonClick = ValueNotifier(false);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,7 +62,22 @@ class _SigninScreenState extends State<SigninScreen> {
             child: Row(
               mainAxisAlignment: .center,
               children: [
-                Radio(value: Color(0xff2BAE66), toggleable: true),
+                ValueListenableBuilder(
+                  valueListenable: isRememberButtonClick,
+                  builder: (BuildContext context, value, Widget? child) {
+                    return GestureDetector(
+                      onTap: () {
+                        isRememberButtonClick.value = !isRememberButtonClick.value;
+                        print('click');
+                      },
+                      child: Icon(
+                        isRememberButtonClick.value
+                            ? Icons.radio_button_checked
+                            : Icons.radio_button_off_outlined,
+                      ),
+                    );
+                  },
+                ),
                 Text(
                   'Remember me',
                   style: TextStyle(fontSize: 12, fontFamily: 'Urbanist'),

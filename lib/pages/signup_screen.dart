@@ -5,6 +5,7 @@ import 'package:hall_management_ui/custom_widgets/mytextstyle.dart';
 import 'package:hall_management_ui/pages/signin_screen.dart';
 import 'package:hall_management_ui/pages/varification_screen.dart';
 import 'package:hall_management_ui/provider/password_visibility_provider.dart';
+import 'package:hall_management_ui/provider/radio_button_provider.dart';
 import 'package:provider/provider.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -55,7 +56,17 @@ class SignupScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: .center,
                 children: [
-                  Radio(value: Color(0xff2BAE66), toggleable: true),
+                  InkWell(
+                      onTap: () {
+                        context.read<RadioButtonProvider>().buttonChange();
+                        print('click');
+                      },
+                      child: Icon(
+                        context.watch<RadioButtonProvider>().isOnClickChange
+                            ? Icons.radio_button_checked
+                            : Icons.radio_button_off_outlined,
+                      ),
+                    ),
                   Text(
                     'Remember me',
                     style: TextStyle(fontSize: 12, fontFamily: 'Urbanist'),

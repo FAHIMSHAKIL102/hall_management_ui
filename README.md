@@ -1,16 +1,46 @@
-# hall_management_ui
+# Hall Management UI
 
-A new Flutter project.
+A comprehensive Flutter application designed to manage hall bookings and events efficiently.
+
+## Features
+- User authentication and profile management.
+- Hall booking system with real-time availability.
+- Payment processing integration.
+- User-friendly interface with responsive design.
+- Admin panel for managing bookings and user accounts.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
+- Flutter SDK installed on your machine.
+- An IDE such as Android Studio or Visual Studio Code.
 
-A few resources to get you started if this is your first Flutter project:
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/hall_management_ui.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd hall_management_ui
+   ```
+3. Install dependencies:
+   ```bash
+   flutter pub get
+   ```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Running the App
+- To run the app, use:
+  ```bash
+  flutter run
+  ```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Resources
+- [Flutter Documentation](https://docs.flutter.dev/)
+- [Flutter Packages](https://pub.dev/)
+
+## Contributing
+Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
