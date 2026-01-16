@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hall_management_ui/pages/edit_profile_screen.dart';
 import 'package:hall_management_ui/pages/signin_screen.dart';
 
 class ProfileDetailsScreen extends StatelessWidget {
@@ -99,24 +100,32 @@ class ProfileDetailsScreen extends StatelessWidget {
             margin: EdgeInsets.only(top: 11, left: 17),
             child: Column(
               children: [
-                Row(
-                  children: [
-                    SizedBox(
-                      height: 42,
-                      width: 42,
-                      child: Image(
-                        image: AssetImage('assets/images/Profile1.png'),
-                      ),
+                InkWell(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => EditProfileScreen(),
                     ),
-                    SizedBox(width: 17),
-                    Text(
-                      'Edit Profile',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
+                  ),
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        height: 42,
+                        width: 42,
+                        child: Image(
+                          image: AssetImage('assets/images/Profile1.png'),
+                        ),
                       ),
-                    ),
-                  ],
+                      SizedBox(width: 17),
+                      Text(
+                        'Edit Profile',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 SizedBox(height: 33),
                 Row(
