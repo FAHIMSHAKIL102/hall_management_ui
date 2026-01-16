@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hall_management_ui/pages/edit_profile_screen.dart';
+import 'package:hall_management_ui/pages/payment_history_screen.dart';
 import 'package:hall_management_ui/pages/signin_screen.dart';
 
 class ProfileDetailsScreen extends StatelessWidget {
@@ -128,42 +129,56 @@ class ProfileDetailsScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 33),
-                Row(
-                  children: [
-                    SizedBox(
-                      height: 42,
-                      width: 42,
-                      child: Image(
-                        image: AssetImage('assets/images/IconPayhistory.png'),
-                      ),
+                InkWell( onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PaymentHistoryScreen(),
                     ),
-                    SizedBox(width: 17),
-                    Text(
-                      'Payment History',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
+                  ),
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        height: 42,
+                        width: 42,
+                        child: Image(
+                          image: AssetImage('assets/images/IconPayhistory.png'),
+                        ),
                       ),
-                    ),
-                  ],
+                      SizedBox(width: 17),
+                      Text(
+                        'Payment History',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 SizedBox(height: 33),
-                Row(
-                  children: [
-                    SizedBox(
-                      height: 42,
-                      width: 42,
-                      child: Image(image: AssetImage('assets/images/Lock.png')),
+                InkWell(onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => EditProfileScreen(),
                     ),
-                    SizedBox(width: 17),
-                    Text(
-                      'Change Password',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
+                  ),
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        height: 42,
+                        width: 42,
+                        child: Image(image: AssetImage('assets/images/Lock.png')),
                       ),
-                    ),
-                  ],
+                      SizedBox(width: 17),
+                      Text(
+                        'Change Password',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 SizedBox(height: 91),
                 Row(
