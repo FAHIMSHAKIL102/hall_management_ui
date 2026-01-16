@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hall_management_ui/custom_widgets/myTextFormfield.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
 import 'package:hall_management_ui/custom_widgets/mytextstyle.dart';
+import 'package:hall_management_ui/pages/bottom_navigation_screen.dart';
 import 'package:hall_management_ui/pages/forgot_pass_screen.dart';
 import 'package:hall_management_ui/pages/home_screen.dart';
 import 'package:hall_management_ui/pages/signup_screen.dart';
@@ -73,7 +74,7 @@ class _SigninScreenState extends State<SigninScreen> {
           InkWell(
             onTap: () => Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => HomeScreen()),
+              MaterialPageRoute(builder: (context) => BottomNavigationScreen()),
             ),
             child: Mybutton(title: 'Sign in'),
           ),
