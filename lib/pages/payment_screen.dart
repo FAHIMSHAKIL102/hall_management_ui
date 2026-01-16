@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
+import 'package:hall_management_ui/pages/one_card_details_screen.dart';
 
 class PaymentScreen extends StatelessWidget {
   const PaymentScreen({super.key});
@@ -57,7 +58,13 @@ class PaymentScreen extends StatelessWidget {
             ),
           ),
           SizedBox(height: 356),
-          InkWell(child: Mybutton(title: 'Continue')),
+          InkWell(
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => OneCardDetailsScreen()),
+            ),
+            child: Mybutton(title: 'Continue'),
+          ),
         ],
       ),
     );
