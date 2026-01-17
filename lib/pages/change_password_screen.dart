@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hall_management_ui/custom_widgets/myTextFormfield.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
+import 'package:hall_management_ui/pages/bottom_navigation_screen.dart';
 import 'package:hall_management_ui/pages/profile_details_screen.dart';
 import 'package:hall_management_ui/provider/password_visibility_provider.dart';
 import 'package:provider/provider.dart';
@@ -118,7 +119,7 @@ class ChangePasswordScreen extends StatelessWidget {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) =>
-                                        ProfileDetailsScreen(),
+                                        BottomNavigationScreen(),
                                   ),
                                 ),
                                 child: SizedBox(

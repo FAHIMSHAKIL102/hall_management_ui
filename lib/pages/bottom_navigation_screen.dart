@@ -15,6 +15,7 @@ class BottomNavigationScreen extends StatelessWidget {
     return Scaffold(
       body: PageView(
         controller: bottomNavigatorProvider.pageController,
+        onPageChanged: bottomNavigatorProvider.onPageChanged,
         children: [
           HomeScreen(),
           SearchResultScreen(),
@@ -25,7 +26,7 @@ class BottomNavigationScreen extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.home_outlined),
             label: 'Home',
             tooltip: 'Home',
           ),
@@ -48,7 +49,7 @@ class BottomNavigationScreen extends StatelessWidget {
         currentIndex: bottomNavigatorProvider.selectedIndex,
         selectedItemColor: Color(0xff2BAE66),
         unselectedItemColor: Color(0xff000000),
-        onTap: bottomNavigatorProvider.onTapped,
+        onTap: bottomNavigatorProvider.changeIndex,
       ),
     );
   }
