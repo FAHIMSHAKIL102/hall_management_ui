@@ -22,7 +22,7 @@ class VarificationScreen extends StatelessWidget {
               child: myText45('Please verify'),
             ),
             SizedBox(height: 40),
-            Container(
+            SizedBox(
               height: 17,
               child: Text('Please Check your email for the varification code'),
             ),
@@ -46,10 +46,13 @@ class VarificationScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Mybutton(title: 'Verify',onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => ProfileInfoScreen()),
-            ),),
+            Mybutton(
+              title: 'Verify',
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProfileInfoScreen()),
+              ),
+            ),
             Container(
               margin: EdgeInsets.only(top: 79),
               height: 14,

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
 import 'package:hall_management_ui/pages/bottom_navigation_screen.dart';
-import 'package:hall_management_ui/pages/profile_details_screen.dart';
 import 'package:hall_management_ui/provider/bottom_navigator_provider.dart';
 import 'package:provider/provider.dart';
 

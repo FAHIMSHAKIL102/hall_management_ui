@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class MybuttonW220 extends StatelessWidget {
   final String title;
   final VoidCallback? onTap;
-  const MybuttonW220({super.key, required this.title,this.onTap});
+  const MybuttonW220({super.key, required this.title, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class MybuttonW220 extends StatelessWidget {
               fontSize: 16,
               fontFamily: 'Urbanist-Medium',
               color: Color(0xffFFFFFF),
-              fontWeight: FontWeight.w500
+              fontWeight: FontWeight.w500,
             ),
           ),
         ),

@@ -70,12 +70,13 @@ class PaymentScreen extends StatelessWidget {
             ),
           ),
           SizedBox(height: 356),
-          Mybutton(title: 'Continue',onTap: () => Navigator.push(
+          Mybutton(
+            title: 'Continue',
+            onTap: () => Navigator.push(
               context,
-              MaterialPageRoute(
-                builder: (context) => OneCardDetailsScreen(),
-              ),
-            ),),
+              MaterialPageRoute(builder: (context) => OneCardDetailsScreen()),
+            ),
+          ),
         ],
       ),
     );

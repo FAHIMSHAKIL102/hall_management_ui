@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton_w124.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton_w90.dart';
-import 'package:hall_management_ui/pages/bottom_navigation_screen.dart';
 import 'package:hall_management_ui/pages/search_result_screen.dart';
 import 'package:hall_management_ui/provider/button_color_provider.dart';
 import 'package:hall_management_ui/provider/button_three_color_provider.dart';
@@ -22,74 +21,72 @@ class HomeScreen extends StatelessWidget {
           automaticallyImplyLeading: false,
           toolbarHeight: 200,
           flexibleSpace: SafeArea(
-            child: Container(
-              child: Column(
-                crossAxisAlignment: .start,
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(left: 23),
-                    child: Row(
-                      children: [
-                        Container(
-                          height: 34,
-                          width: 34,
-                          child: Image(
-                            image: AssetImage('assets/images/diulogo.png'),
-                          ),
-                        ),
-                        SizedBox(width: 20),
-                        Text(
-                          'DIU HALL',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 28, left: 23),
-                    height: 41,
-                    width: 307,
-                    child: Text(
-                      'Hello, Kabir!',
-                      style: TextStyle(
-                        fontSize: 34,
-                        fontWeight: FontWeight.w700,
-                        color: Color(0xff2BAE66),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 18, left: 24, bottom: 23),
-                    width: 381,
-                    height: 56,
-                    color: Color(0xffFAFAFA),
-                    child: SearchBar(
-                      leading: Icon(Icons.search),
-                      hintText: 'Search',
-                      shape: WidgetStatePropertyAll(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
+            child: Column(
+              crossAxisAlignment: .start,
+              children: [
+                Container(
+                  margin: EdgeInsets.only(left: 23),
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        height: 34,
+                        width: 34,
+                        child: Image(
+                          image: AssetImage('assets/images/diulogo.png'),
                         ),
                       ),
-                      elevation: WidgetStatePropertyAll(0),
-                      trailing: [
-                        IconButton(
-                          onPressed: () {
-                            SearchFilter(context);
-                          },
-                          icon: Icon(
-                            Icons.format_list_bulleted,
-                            color: Color(0xff2BAE66),
-                          ),
+                      SizedBox(width: 20),
+                      Text(
+                        'DIU HALL',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700,
                         ),
-                      ],
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 28, left: 23),
+                  height: 41,
+                  width: 307,
+                  child: Text(
+                    'Hello, Kabir!',
+                    style: TextStyle(
+                      fontSize: 34,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xff2BAE66),
                     ),
                   ),
-                ],
-              ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 18, left: 24, bottom: 23),
+                  width: 381,
+                  height: 56,
+                  color: Color(0xffFAFAFA),
+                  child: SearchBar(
+                    leading: Icon(Icons.search),
+                    hintText: 'Search',
+                    shape: WidgetStatePropertyAll(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    elevation: WidgetStatePropertyAll(0),
+                    trailing: [
+                      IconButton(
+                        onPressed: () {
+                          searchFilter(context);
+                        },
+                        icon: Icon(
+                          Icons.format_list_bulleted,
+                          color: Color(0xff2BAE66),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
           bottom: PreferredSize(
@@ -144,7 +141,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Future<dynamic> SearchFilter(BuildContext context) {
+  Future<dynamic> searchFilter(BuildContext context) {
     return showModalBottomSheet(
       isScrollControlled: true,
       context: context,

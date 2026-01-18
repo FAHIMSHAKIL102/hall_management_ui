@@ -21,12 +21,15 @@ class PassResetConfirmScreen extends StatelessWidget {
           SizedBox(height: 65),
           Padding(
             padding: const EdgeInsets.only(left: 24),
-            child: Mybutton(title: "Homepage",onTap: () => Navigator.pushReplacement(
+            child: Mybutton(
+              title: "Homepage",
+              onTap: () => Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
                   builder: (context) => BottomNavigationScreen(),
                 ),
-              ),),
+              ),
+            ),
           ),
         ],
       ),

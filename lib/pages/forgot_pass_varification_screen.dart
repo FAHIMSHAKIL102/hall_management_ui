@@ -46,12 +46,13 @@ class ForgotPassVarificationScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Mybutton(title: 'Verify',onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => SetPassScreen(),
+            Mybutton(
+              title: 'Verify',
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SetPassScreen()),
               ),
-            ),),
+            ),
             Container(
               margin: EdgeInsets.only(top: 79),
               height: 14,

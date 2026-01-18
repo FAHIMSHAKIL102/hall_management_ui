@@ -13,10 +13,7 @@ class EditProfileScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Edit your profile',
-          style: TextStyle(
-            fontSize: 25,
-            fontWeight: FontWeight.w700,
-          ),
+          style: TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
         ),
       ),
       body: SingleChildScrollView(

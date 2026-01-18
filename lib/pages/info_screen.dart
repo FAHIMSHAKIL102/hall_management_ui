@@ -14,7 +14,7 @@ class InfoScreen extends StatelessWidget {
             flex: 2,
             child: Stack(
               children: [
-                Container(
+                SizedBox(
                   height: 515,
                   width: 457,
                   child: Image(image: AssetImage('assets/images/Vector.png')),
@@ -22,7 +22,7 @@ class InfoScreen extends StatelessWidget {
                 Positioned(
                   top: 407,
                   left: 28, //right: 57,bottom: 290,
-                  child: Container(
+                  child: SizedBox(
                     height: 235,
                     width: 345,
                     child: Text(

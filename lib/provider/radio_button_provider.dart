@@ -7,7 +7,6 @@ class RadioButtonProvider extends ChangeNotifier {
   set value(bool value) {}
   void buttonChange() {
     _isOnClickChange = !_isOnClickChange;
-    print(isOnClickChange);
     notifyListeners();
   }
 }

@@ -40,7 +40,7 @@ class ProfileInfoScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: .center,
           children: [
-            Container(
+            SizedBox(
               height: 145,
               width: 165,
               child: Stack(
@@ -133,7 +133,7 @@ class ProfileInfoScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 6),
-            Container(
+            SizedBox(
               height: 25,
               child: Row(
                 mainAxisAlignment: .center,
@@ -158,12 +158,15 @@ class ProfileInfoScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 31),
-            Mybutton(title: 'Sign up',onTap: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => ConfirmationScreen()),
-              );
-            },),
+            Mybutton(
+              title: 'Sign up',
+              onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => ConfirmationScreen()),
+                );
+              },
+            ),
           ],
         ),
       ),

@@ -904,21 +904,19 @@ class RoomViewScreen extends StatelessWidget {
                               Row(
                                 mainAxisAlignment: .spaceEvenly,
                                 children: [
-                                  Container(
-                                    child: Column(
-                                      crossAxisAlignment: .start,
-                                      children: [
-                                        Text(
-                                          '3000TK.',
-                                          style: TextStyle(
-                                            fontSize: 30,
-                                            fontWeight: FontWeight.w900,
-                                            color: Color(0xff2BAE66),
-                                          ),
+                                  Column(
+                                    crossAxisAlignment: .start,
+                                    children: [
+                                      Text(
+                                        '3000TK.',
+                                        style: TextStyle(
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.w900,
+                                          color: Color(0xff2BAE66),
                                         ),
-                                        Text('/month'),
-                                      ],
-                                    ),
+                                      ),
+                                      Text('/month'),
+                                    ],
                                   ),
                                   MybuttonW220(
                                     title: 'Pay Now',

@@ -34,12 +34,15 @@ class ForgotPassScreen extends StatelessWidget {
               myPrefixIcon: Icon(Icons.email),
             ),
             SizedBox(height: 18),
-            Mybutton(title: 'Continue',onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => ForgotPassVarificationScreen(),
+            Mybutton(
+              title: 'Continue',
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ForgotPassVarificationScreen(),
+                ),
               ),
-            ),),
+            ),
             SizedBox(height: 288),
             Container(
               margin: EdgeInsets.only(bottom: 45),

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hall_management_ui/pages/bottom_navigation_screen.dart';
 import 'package:hall_management_ui/pages/change_password_screen.dart';
 import 'package:hall_management_ui/pages/edit_profile_screen.dart';
-import 'package:hall_management_ui/pages/payment_history_screen.dart';
 import 'package:hall_management_ui/pages/signin_screen.dart';
 import 'package:hall_management_ui/provider/bottom_navigator_provider.dart';
 import 'package:provider/provider.dart';

@@ -21,12 +21,17 @@ class ConfirmationScreen extends StatelessWidget {
           SizedBox(height: 65),
           Padding(
             padding: const EdgeInsets.only(left: 24),
-            child: Mybutton(title: "Homepage",onTap: () {
+            child: Mybutton(
+              title: "Homepage",
+              onTap: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => BottomNavigationScreen()),
+                  MaterialPageRoute(
+                    builder: (context) => BottomNavigationScreen(),
+                  ),
                 );
-              },),
+              },
+            ),
           ),
         ],
       ),
