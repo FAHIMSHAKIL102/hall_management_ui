@@ -21,7 +21,7 @@ class ProfileInfoScreen extends StatelessWidget {
 
   final phoneController = TextEditingController();
 
-  List<String> gender = ['Male', 'Female'];
+  final List<String> gender = ['Male', 'Female'];
 
   @override
   Widget build(BuildContext context) {
@@ -158,15 +158,12 @@ class ProfileInfoScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 31),
-            InkWell(
-              onTap: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => ConfirmationScreen()),
-                );
-              },
-              child: Mybutton(title: 'Sign up'),
-            ),
+            Mybutton(title: 'Sign up',onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => ConfirmationScreen()),
+              );
+            },),
           ],
         ),
       ),

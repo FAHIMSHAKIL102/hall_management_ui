@@ -4,6 +4,8 @@ import 'package:hall_management_ui/custom_widgets/mybutton_w90.dart';
 import 'package:hall_management_ui/pages/bottom_navigation_screen.dart';
 import 'package:hall_management_ui/pages/search_result_screen.dart';
 import 'package:hall_management_ui/provider/button_color_provider.dart';
+import 'package:hall_management_ui/provider/button_three_color_provider.dart';
+import 'package:hall_management_ui/provider/button_two_color_provider.dart';
 import 'package:hall_management_ui/provider/facility_provider.dart';
 import 'package:hall_management_ui/provider/range_slider_provider.dart';
 import 'package:provider/provider.dart';
@@ -149,51 +151,48 @@ class HomeScreen extends StatelessWidget {
       builder: (context) {
         return SizedBox(
           height: 850,
-          child: Consumer<ButtonColorProvider>(
-            builder:
-                (
-                  BuildContext context,
-                  ButtonColorProvider value,
-                  Widget? child,
-                ) => Column(
-                  crossAxisAlignment: .start,
+          child: Column(
+            crossAxisAlignment: .start,
+            children: [
+              Container(
+                margin: EdgeInsets.only(top: 30, left: 163, bottom: 23),
+                child: Text(
+                  'Filter Hall',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
+                ),
+              ),
+              Divider(),
+              SizedBox(height: 24),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 23),
+                child: Row(
+                  mainAxisAlignment: .spaceBetween,
                   children: [
-                    Container(
-                      margin: EdgeInsets.only(top: 30, left: 163, bottom: 23),
-                      child: Text(
-                        'Filter Hall',
-                        style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.w700,
-                        ),
+                    Text(
+                      'Branch',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
-                    Divider(),
-                    SizedBox(height: 24),
-                    Container(
-                      margin: EdgeInsets.symmetric(horizontal: 23),
-                      child: Row(
-                        mainAxisAlignment: .spaceBetween,
-                        children: [
-                          Text(
-                            'Branch',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                          Text(
-                            'See All',
-                            style: TextStyle(
-                              fontSize: 13,
-                              fontWeight: FontWeight.w700,
-                              color: Color(0xff2BAE66),
-                            ),
-                          ),
-                        ],
+                    Text(
+                      'See All',
+                      style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w700,
+                        color: Color(0xff2BAE66),
                       ),
                     ),
-                    Container(
+                  ],
+                ),
+              ),
+              Consumer<ButtonTwoColorProvider>(
+                builder:
+                    (
+                      BuildContext context,
+                      ButtonTwoColorProvider value,
+                      Widget? child,
+                    ) => Container(
                       margin: EdgeInsets.only(top: 18, left: 23),
                       child: Row(
                         mainAxisAlignment: .spaceAround,
@@ -202,36 +201,44 @@ class HomeScreen extends StatelessWidget {
                             title: 'Extension 1',
                             index: 0,
                             currentIndex: value.currentIndex,
+                            onTap: () => value.setIndex(0),
                           ),
                           MybuttonW90(
                             title: 'Extension 2',
                             index: 1,
                             currentIndex: value.currentIndex,
+                            onTap: () => value.setIndex(1),
                           ),
                           MybuttonW90(
                             title: 'Extension 3',
                             index: 2,
                             currentIndex: value.currentIndex,
+                            onTap: () => value.setIndex(2),
                           ),
                           MybuttonW90(
                             title: 'Extension 4',
                             index: 3,
                             currentIndex: value.currentIndex,
+                            onTap: () => value.setIndex(3),
                           ),
                         ],
                       ),
                     ),
-                    Container(
-                      margin: EdgeInsets.only(top: 27, left: 23),
-                      child: Text(
-                        'Seat Category',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                    ),
-                    Container(
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 27, left: 23),
+                child: Text(
+                  'Seat Category',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                ),
+              ),
+              Consumer<ButtonThreeColorProvider>(
+                builder:
+                    (
+                      BuildContext context,
+                      ButtonThreeColorProvider value,
+                      Widget? child,
+                    ) => Container(
                       margin: EdgeInsets.only(top: 18, left: 23),
                       child: Row(
                         mainAxisAlignment: .spaceAround,
@@ -240,188 +247,178 @@ class HomeScreen extends StatelessWidget {
                             title: 'Single',
                             index: 0,
                             currentIndex: value.currentIndex,
+                            onTap: () => value.setIndex(0),
                           ),
                           MybuttonW90(
                             title: 'Double',
                             index: 1,
                             currentIndex: value.currentIndex,
+                            onTap: () => value.setIndex(1),
                           ),
                           MybuttonW90(
                             title: 'Three',
                             index: 2,
                             currentIndex: value.currentIndex,
+                            onTap: () => value.setIndex(2),
                           ),
                           MybuttonW90(
                             title: 'Four',
                             index: 3,
                             currentIndex: value.currentIndex,
+                            onTap: () => value.setIndex(3),
                           ),
                         ],
                       ),
                     ),
-                    Container(
-                      margin: EdgeInsets.only(top: 27, left: 23),
-                      child: Text(
-                        'Price Range',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.all(5),
-                      child: Column(
-                        children: [
-                          Consumer<RangeSliderProvider>(
-                            builder: (context, provider, child) {
-                              return Column(
-                                children: [
-                                  Text(
-                                    'Range: ${provider.currentValue.start.toInt()}-${provider.currentValue.end.toInt()}',
-                                  ),
-                                  SizedBox(height: 10),
-                                  SliderTheme(
-                                    data: SliderThemeData(
-                                      inactiveTrackColor: Color(0xffFFFFFF),
-                                      valueIndicatorColor: Color(0xff2BAE66),
-                                      overlayColor: Color(0xff2BAE66),
-                                    ),
-                                    child: RangeSlider(
-                                      activeColor: Color(0xff2BAE66),
-                                      values: provider.currentValue,
-                                      min: 0,
-                                      max: 10000,
-                                      divisions: 100,
-                                      labels: RangeLabels(
-                                        provider.currentValue.start.toString(),
-                                        provider.currentValue.end.toString(),
-                                      ),
-                                      onChanged: (newValue) {
-                                        provider.updateValue(newValue);
-                                      },
-                                    ),
-                                  ),
-                                ],
-                              );
-                            },
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 7, left: 23),
-                      child: Text(
-                        'Facilities',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                    ),
-                    Consumer<FacilityProvider>(
-                      builder: (BuildContext context, provider, child) {
-                        return Container(
-                          margin: EdgeInsets.only(top: 18, left: 23),
-                          child: Row(
-                            children: facilities.map((facility) {
-                              final isSelected = provider.isSelected(facility);
-                              return InkWell(
-                                borderRadius: BorderRadius.circular(6),
-                                onTap: () => provider.toggleFacility(facility),
-                                child: Row(
-                                  children: [
-                                    Checkbox(
-                                      value: isSelected,
-                                      onChanged: (_) =>
-                                          provider.toggleFacility(facility),
-                                      activeColor: Colors.green,
-                                      checkColor: Colors.white,
-                                      side: BorderSide(
-                                        color: Colors.green,
-                                        width: 2,
-                                      ),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(5),
-                                      ),
-                                    ),
-                                    Text(
-                                      facility,
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.w700,
-                                      ),
-                                    ),
-                                  ],
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 27, left: 23),
+                child: Text(
+                  'Price Range',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.all(5),
+                child: Column(
+                  children: [
+                    Consumer<RangeSliderProvider>(
+                      builder: (context, provider, child) {
+                        return Column(
+                          children: [
+                            Text(
+                              'Range: ${provider.currentValue.start.toInt()}-${provider.currentValue.end.toInt()}',
+                            ),
+                            SizedBox(height: 10),
+                            SliderTheme(
+                              data: SliderThemeData(
+                                inactiveTrackColor: Color(0xffFFFFFF),
+                                valueIndicatorColor: Color(0xff2BAE66),
+                                overlayColor: Color(0xff2BAE66),
+                              ),
+                              child: RangeSlider(
+                                activeColor: Color(0xff2BAE66),
+                                values: provider.currentValue,
+                                min: 0,
+                                max: 10000,
+                                divisions: 100,
+                                labels: RangeLabels(
+                                  provider.currentValue.start.toString(),
+                                  provider.currentValue.end.toString(),
                                 ),
-                              );
-                            }).toList(),
-                          ),
+                                onChanged: (newValue) {
+                                  provider.updateValue(newValue);
+                                },
+                              ),
+                            ),
+                          ],
                         );
                       },
                     ),
-                    SizedBox(height: 150),
-                    Container(
-                      margin: EdgeInsets.symmetric(horizontal: 24),
-                      child: Row(
-                        mainAxisAlignment: .spaceAround,
-                        children: [
-                          Container(
-                            height: 59,
-                            width: 182,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              border: Border.all(
-                                color: Color(0xff2BAE66),
-                                width: 2,
+                  ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 7, left: 23),
+                child: Text(
+                  'Facilities',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                ),
+              ),
+              Consumer<FacilityProvider>(
+                builder: (BuildContext context, provider, child) {
+                  return Container(
+                    margin: EdgeInsets.only(top: 18, left: 23),
+                    child: Row(
+                      children: facilities.map((facility) {
+                        final isSelected = provider.isSelected(facility);
+                        return InkWell(
+                          borderRadius: BorderRadius.circular(6),
+                          onTap: () => provider.toggleFacility(facility),
+                          child: Row(
+                            children: [
+                              Checkbox(
+                                value: isSelected,
+                                onChanged: (_) =>
+                                    provider.toggleFacility(facility),
+                                activeColor: Colors.green,
+                                checkColor: Colors.white,
+                                side: BorderSide(color: Colors.green, width: 2),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
                               ),
+                              Text(
+                                facility,
+                                style: TextStyle(fontWeight: FontWeight.w700),
+                              ),
+                            ],
+                          ),
+                        );
+                      }).toList(),
+                    ),
+                  );
+                },
+              ),
+              SizedBox(height: 150),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 24),
+                child: Row(
+                  mainAxisAlignment: .spaceAround,
+                  children: [
+                    Container(
+                      height: 59,
+                      width: 182,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        border: Border.all(color: Color(0xff2BAE66), width: 2),
+                        color: Color(0xffFFFFFF),
+                      ),
+                      child: Center(
+                        child: Text(
+                          'Reset',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                            color: Color(0xff2BAE66),
+                          ),
+                        ),
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SearchResultScreen(),
+                        ),
+                      ),
+                      child: Container(
+                        height: 59,
+                        width: 182,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          border: Border.all(
+                            color: Color(0xff2BAE66),
+                            width: 2,
+                          ),
+                          color: Color(0xff2BAE66),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Apply Filter',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700,
                               color: Color(0xffFFFFFF),
                             ),
-                            child: Center(
-                              child: Text(
-                                'Reset',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w700,
-                                  color: Color(0xff2BAE66),
-                                ),
-                              ),
-                            ),
                           ),
-                          InkWell(
-                            onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => SearchResultScreen(),
-                              ),
-                            ),
-                            child: Container(
-                              height: 59,
-                              width: 182,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                border: Border.all(
-                                  color: Color(0xff2BAE66),
-                                  width: 2,
-                                ),
-                                color: Color(0xff2BAE66),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  'Apply Filter',
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w700,
-                                    color: Color(0xffFFFFFF),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
+                        ),
                       ),
                     ),
                   ],
                 ),
+              ),
+            ],
           ),
         );
       },

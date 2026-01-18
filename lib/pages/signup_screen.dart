@@ -77,13 +77,10 @@ class SignupScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 23),
-            InkWell(
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => VarificationScreen()),
-              ),
-              child: Mybutton(title: 'Sign up'),
-            ),
+            Mybutton(title: 'Sign up',onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => VarificationScreen()),
+            ),),
             SizedBox(height: 222),
             Container(
               margin: EdgeInsets.only(bottom: 45),

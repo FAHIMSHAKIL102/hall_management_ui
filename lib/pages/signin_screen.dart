@@ -69,18 +69,19 @@ class _SigninScreenState extends State<SigninScreen> {
                     builder: (BuildContext context, value, Widget? child) {
                       return GestureDetector(
                         onTap: () {
-                          isRememberButtonClick.value = !isRememberButtonClick.value;
+                          isRememberButtonClick.value =
+                              !isRememberButtonClick.value;
                         },
                         child: Icon(
                           isRememberButtonClick.value
                               ? Icons.radio_button_checked
                               : Icons.radio_button_off_outlined,
-                              color: Color(0xff2BAE66),
+                          color: Color(0xff2BAE66),
                         ),
                       );
                     },
                   ),
-                  SizedBox(width: 13,),
+                  SizedBox(width: 13),
                   Text(
                     'Remember me',
                     style: TextStyle(fontSize: 12, fontFamily: 'Urbanist'),
@@ -89,12 +90,14 @@ class _SigninScreenState extends State<SigninScreen> {
               ),
             ),
             SizedBox(height: 23),
-            InkWell(
+            Mybutton(
+              title: 'Sign in',
               onTap: () => Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => BottomNavigationScreen()),
+                MaterialPageRoute(
+                  builder: (context) => BottomNavigationScreen(),
+                ),
               ),
-              child: Mybutton(title: 'Sign in'),
             ),
             SizedBox(height: 42),
             SizedBox(

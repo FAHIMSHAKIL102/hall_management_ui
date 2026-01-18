@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
 import 'package:hall_management_ui/pages/one_card_details_screen.dart';
+import 'package:hall_management_ui/provider/radio_button_provider.dart';
+import 'package:provider/provider.dart';
 
 class PaymentScreen extends StatelessWidget {
   const PaymentScreen({super.key});
@@ -52,19 +54,28 @@ class PaymentScreen extends StatelessWidget {
                     'One Card',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
                   ),
-                  trailing: Radio(value: Color(0xff2BAE66), toggleable: true),
+                  trailing: InkWell(
+                    onTap: () {
+                      context.read<RadioButtonProvider>().buttonChange();
+                    },
+                    child: Icon(
+                      context.watch<RadioButtonProvider>().isOnClickChange
+                          ? Icons.radio_button_checked
+                          : Icons.radio_button_off_outlined,
+                      color: Color(0xff2BAE66),
+                    ),
+                  ),
                 ),
               ),
             ),
           ),
           SizedBox(height: 356),
-          InkWell(
-            onTap: () => Navigator.push(
+          Mybutton(title: 'Continue',onTap: () => Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => OneCardDetailsScreen()),
-            ),
-            child: Mybutton(title: 'Continue'),
-          ),
+              MaterialPageRoute(
+                builder: (context) => OneCardDetailsScreen(),
+              ),
+            ),),
         ],
       ),
     );

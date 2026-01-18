@@ -62,15 +62,12 @@ class SetPassScreen extends StatelessWidget {
               },
             ),
             SizedBox(height: 44),
-            InkWell(
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => PassResetConfirmScreen(),
-                ),
+            Mybutton(title: 'Reset',onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => PassResetConfirmScreen(),
               ),
-              child: Mybutton(title: 'Reset'),
-            ),
+            ),),
           ],
         ),
       ),

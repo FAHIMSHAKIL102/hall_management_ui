@@ -139,7 +139,7 @@ class ChangePasswordScreen extends StatelessWidget {
                   },
                 );
               },
-              child: Mybutton(title: 'Update'),
+              child: Mybutton(title: 'Update',),
             ),
           ],
         ),

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:hall_management_ui/pages/bottom_navigation_screen.dart';
 import 'package:hall_management_ui/pages/change_password_screen.dart';
 import 'package:hall_management_ui/pages/edit_profile_screen.dart';
 import 'package:hall_management_ui/pages/payment_history_screen.dart';
 import 'package:hall_management_ui/pages/signin_screen.dart';
+import 'package:hall_management_ui/provider/bottom_navigator_provider.dart';
+import 'package:provider/provider.dart';
 
 class ProfileDetailsScreen extends StatelessWidget {
   const ProfileDetailsScreen({super.key});
@@ -130,12 +133,16 @@ class ProfileDetailsScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 33),
-                InkWell( onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => PaymentHistoryScreen(),
-                    ),
-                  ),
+                InkWell(
+                  onTap: () {
+                    context.read<BottomNavigatorProvider>().changeIndex(2);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => BottomNavigationScreen(),
+                      ),
+                    );
+                  },
                   child: Row(
                     children: [
                       SizedBox(
@@ -157,7 +164,8 @@ class ProfileDetailsScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 33),
-                InkWell(onTap: () => Navigator.push(
+                InkWell(
+                  onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => ChangePasswordScreen(),
@@ -168,7 +176,9 @@ class ProfileDetailsScreen extends StatelessWidget {
                       SizedBox(
                         height: 42,
                         width: 42,
-                        child: Image(image: AssetImage('assets/images/Lock.png')),
+                        child: Image(
+                          image: AssetImage('assets/images/Lock.png'),
+                        ),
                       ),
                       SizedBox(width: 17),
                       Text(
@@ -226,7 +236,7 @@ class ProfileDetailsScreen extends StatelessWidget {
                                   ),
                                   SizedBox(height: 22),
                                   InkWell(
-                                    onTap: () => Navigator.push(
+                                    onTap: () => Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) => SigninScreen(),

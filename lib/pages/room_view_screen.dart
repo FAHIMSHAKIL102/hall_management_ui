@@ -920,14 +920,14 @@ class RoomViewScreen extends StatelessWidget {
                                       ],
                                     ),
                                   ),
-                                  InkWell(
+                                  MybuttonW220(
+                                    title: 'Pay Now',
                                     onTap: () => Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) => PaymentScreen(),
                                       ),
                                     ),
-                                    child: MybuttonW220(title: 'Pay Now'),
                                   ),
                                 ],
                               ),

@@ -76,10 +76,7 @@ class EditProfileScreen extends StatelessWidget {
             SizedBox(height: 75),
             InkWell(
               onTap: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => EditProfileScreen()),
-                );
+                Navigator.pop(context);
               },
               child: Mybutton(title: 'Update'),
             ),

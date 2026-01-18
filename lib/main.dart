@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hall_management_ui/pages/splash_screen.dart';
 import 'package:hall_management_ui/provider/bottom_navigator_provider.dart';
 import 'package:hall_management_ui/provider/button_color_provider.dart';
+import 'package:hall_management_ui/provider/button_three_color_provider.dart';
+import 'package:hall_management_ui/provider/button_two_color_provider.dart';
 import 'package:hall_management_ui/provider/facility_provider.dart';
 import 'package:hall_management_ui/provider/password_visibility_provider.dart';
 import 'package:hall_management_ui/provider/radio_button_provider.dart';
@@ -24,7 +26,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => RangeSliderProvider()),
         ChangeNotifierProvider(create: (context) => FacilityProvider()),
         ChangeNotifierProvider(create: (context) => BottomNavigatorProvider()),
-        ChangeNotifierProvider(create: (context)=>RadioButtonProvider())
+        ChangeNotifierProvider(create: (context) => RadioButtonProvider()),
+        ChangeNotifierProvider(create: (context) => ButtonTwoColorProvider()),
+        ChangeNotifierProvider(create: (context) => ButtonThreeColorProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

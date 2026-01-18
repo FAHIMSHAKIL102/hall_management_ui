@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
 import 'package:hall_management_ui/custom_widgets/mytextstyle.dart';
+import 'package:hall_management_ui/pages/bottom_navigation_screen.dart';
 
 class PassResetConfirmScreen extends StatelessWidget {
   const PassResetConfirmScreen({super.key});
@@ -20,7 +21,12 @@ class PassResetConfirmScreen extends StatelessWidget {
           SizedBox(height: 65),
           Padding(
             padding: const EdgeInsets.only(left: 24),
-            child: InkWell(child: Mybutton(title: "Homepage")),
+            child: Mybutton(title: "Homepage",onTap: () => Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => BottomNavigationScreen(),
+                ),
+              ),),
           ),
         ],
       ),

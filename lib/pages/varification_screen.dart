@@ -46,13 +46,10 @@ class VarificationScreen extends StatelessWidget {
                 ),
               ),
             ),
-            InkWell(
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ProfileInfoScreen()),
-              ),
-              child: Mybutton(title: 'Verify'),
-            ),
+            Mybutton(title: 'Verify',onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ProfileInfoScreen()),
+            ),),
             Container(
               margin: EdgeInsets.only(top: 79),
               height: 14,
