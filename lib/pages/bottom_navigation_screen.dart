@@ -13,9 +13,8 @@ class BottomNavigationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final bottomNavigatorProvider = context.watch<BottomNavigatorProvider>();
     return Scaffold(
-      body: PageView(
-        controller: bottomNavigatorProvider.pageController,
-        onPageChanged: bottomNavigatorProvider.onPageChanged,
+      body: IndexedStack(
+        index: bottomNavigatorProvider.selectedIndex,
         children: [
           HomeScreen(),
           SearchResultScreen(),
