@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:hall_management_ui/custom_widgets/myTextFormfield.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
 import 'package:hall_management_ui/pages/confirmation_screen.dart';
+import 'package:hall_management_ui/provider/radio_button_provider.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:provider/provider.dart';
 
 class ProfileInfoScreen extends StatelessWidget {
   ProfileInfoScreen({super.key});
@@ -132,11 +134,22 @@ class ProfileInfoScreen extends StatelessWidget {
             ),
             SizedBox(height: 6),
             Container(
-              height: 14,
+              height: 25,
               child: Row(
                 mainAxisAlignment: .center,
                 children: [
-                  Radio(value: Color(0xff2BAE66), toggleable: true),
+                  InkWell(
+                    onTap: () {
+                      context.read<RadioButtonProvider>().buttonChange();
+                    },
+                    child: Icon(
+                      context.watch<RadioButtonProvider>().isOnClickChange
+                          ? Icons.radio_button_checked
+                          : Icons.radio_button_off_outlined,
+                      color: Color(0xff2BAE66),
+                    ),
+                  ),
+                  SizedBox(width: 13),
                   Text(
                     'I accept of the terms and conditions',
                     style: TextStyle(fontSize: 12, fontFamily: 'Urbanist'),

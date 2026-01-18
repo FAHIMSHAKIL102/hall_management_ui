@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
+import 'package:hall_management_ui/pages/bottom_navigation_screen.dart';
 import 'package:hall_management_ui/pages/profile_details_screen.dart';
+import 'package:hall_management_ui/provider/bottom_navigator_provider.dart';
+import 'package:provider/provider.dart';
 
 class OneCardDetailsScreen extends StatelessWidget {
   const OneCardDetailsScreen({super.key});
@@ -60,10 +63,15 @@ class OneCardDetailsScreen extends StatelessWidget {
           ),
           SizedBox(height: 283),
           InkWell(
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => ProfileDetailsScreen()),
-            ),
+            onTap: () {
+              context.read<BottomNavigatorProvider>().changeIndex(3);
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => BottomNavigationScreen(),
+                ),
+              );
+            },
             child: Mybutton(title: 'Continue'),
           ),
         ],

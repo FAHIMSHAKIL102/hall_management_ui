@@ -23,121 +23,125 @@ class _SigninScreenState extends State<SigninScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Column(
-        crossAxisAlignment: .center,
-        children: [
-          Container(
-            margin: EdgeInsets.only(top: 104),
-            height: 60,
-            child: myText45("Let's you in"),
-          ),
-          SizedBox(height: 125),
-          Mytextformfield(
-            myController: emailController,
-            myHintText: 'Email',
-            myObscureText: false,
-            myPrefixIcon: Icon(Icons.email),
-            myTextInputType: TextInputType.emailAddress,
-          ),
-          Consumer<PasswordVisibilityProvider>(
-            builder: (BuildContext context, value, child) {
-              return Mytextformfield(
-                myController: passwordController,
-                myHintText: 'Password',
-                myObscureText: value.toggle,
-                myPrefixIcon: Icon(Icons.lock),
-                mySuffixIcon: IconButton(
-                  onPressed: () {
-                    value.setToggle();
-                  },
-                  icon: Icon(
-                    value.toggle ? Icons.visibility_off : Icons.visibility,
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: .center,
+          children: [
+            Container(
+              margin: EdgeInsets.only(top: 104),
+              height: 60,
+              child: myText45("Let's you in"),
+            ),
+            SizedBox(height: 125),
+            Mytextformfield(
+              myController: emailController,
+              myHintText: 'Email',
+              myObscureText: false,
+              myPrefixIcon: Icon(Icons.email),
+              myTextInputType: TextInputType.emailAddress,
+            ),
+            Consumer<PasswordVisibilityProvider>(
+              builder: (BuildContext context, value, child) {
+                return Mytextformfield(
+                  myController: passwordController,
+                  myHintText: 'Password',
+                  myObscureText: value.toggle,
+                  myPrefixIcon: Icon(Icons.lock),
+                  mySuffixIcon: IconButton(
+                    onPressed: () {
+                      value.setToggle();
+                    },
+                    icon: Icon(
+                      value.toggle ? Icons.visibility_off : Icons.visibility,
+                    ),
                   ),
-                ),
-              );
-            },
-          ),
-          SizedBox(
-            height: 14,
-            child: Row(
-              mainAxisAlignment: .center,
-              children: [
-                ValueListenableBuilder(
-                  valueListenable: isRememberButtonClick,
-                  builder: (BuildContext context, value, Widget? child) {
-                    return GestureDetector(
-                      onTap: () {
-                        isRememberButtonClick.value = !isRememberButtonClick.value;
-                        print('click');
-                      },
-                      child: Icon(
-                        isRememberButtonClick.value
-                            ? Icons.radio_button_checked
-                            : Icons.radio_button_off_outlined,
-                      ),
-                    );
-                  },
-                ),
-                Text(
-                  'Remember me',
-                  style: TextStyle(fontSize: 12, fontFamily: 'Urbanist'),
-                ),
-              ],
+                );
+              },
             ),
-          ),
-          SizedBox(height: 23),
-          InkWell(
-            onTap: () => Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) => BottomNavigationScreen()),
+            SizedBox(
+              height: 25,
+              child: Row(
+                mainAxisAlignment: .center,
+                crossAxisAlignment: .center,
+                children: [
+                  ValueListenableBuilder(
+                    valueListenable: isRememberButtonClick,
+                    builder: (BuildContext context, value, Widget? child) {
+                      return GestureDetector(
+                        onTap: () {
+                          isRememberButtonClick.value = !isRememberButtonClick.value;
+                        },
+                        child: Icon(
+                          isRememberButtonClick.value
+                              ? Icons.radio_button_checked
+                              : Icons.radio_button_off_outlined,
+                              color: Color(0xff2BAE66),
+                        ),
+                      );
+                    },
+                  ),
+                  SizedBox(width: 13,),
+                  Text(
+                    'Remember me',
+                    style: TextStyle(fontSize: 12, fontFamily: 'Urbanist'),
+                  ),
+                ],
+              ),
             ),
-            child: Mybutton(title: 'Sign in'),
-          ),
-          SizedBox(height: 42),
-          SizedBox(
-            child: InkWell(
-              onTap: () => Navigator.push(
+            SizedBox(height: 23),
+            InkWell(
+              onTap: () => Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => ForgotPassScreen()),
+                MaterialPageRoute(builder: (context) => BottomNavigationScreen()),
               ),
-              child: Text(
-                'Forgot password?',
-                style: TextStyle(
-                  fontSize: 12,
-                  fontFamily: 'Urbanist',
-                  color: Color(0xff2BAE66),
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
+              child: Mybutton(title: 'Sign in'),
             ),
-          ),
-          SizedBox(height: 177),
-          Container(
-            margin: EdgeInsets.only(bottom: 45),
-            child: Row(
-              mainAxisAlignment: .center,
-              children: [
-                Text(
-                  "Don't have an account?",
+            SizedBox(height: 42),
+            SizedBox(
+              child: InkWell(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ForgotPassScreen()),
+                ),
+                child: Text(
+                  'Forgot password?',
                   style: TextStyle(
-                    fontFamily: 'Urbanist-Regular',
-                    fontSize: 14,
+                    fontSize: 12,
+                    fontFamily: 'Urbanist',
+                    color: Color(0xff2BAE66),
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
-                SizedBox(width: 2),
-                InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SignupScreen()),
-                    );
-                  },
-                  child: Text('Sign Up', style: myTextStyle14()),
-                ),
-              ],
+              ),
             ),
-          ),
-        ],
+            SizedBox(height: 166),
+            Container(
+              margin: EdgeInsets.only(bottom: 45),
+              child: Row(
+                mainAxisAlignment: .center,
+                children: [
+                  Text(
+                    "Don't have an account?",
+                    style: TextStyle(
+                      fontFamily: 'Urbanist-Regular',
+                      fontSize: 14,
+                    ),
+                  ),
+                  SizedBox(width: 2),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SignupScreen()),
+                      );
+                    },
+                    child: Text('Sign Up', style: myTextStyle14()),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

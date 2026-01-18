@@ -52,21 +52,23 @@ class SignupScreen extends StatelessWidget {
               },
             ),
             SizedBox(
-              height: 14,
+              height: 25,
               child: Row(
                 mainAxisAlignment: .center,
+                crossAxisAlignment: .center,
                 children: [
                   InkWell(
-                      onTap: () {
-                        context.read<RadioButtonProvider>().buttonChange();
-                        print('click');
-                      },
-                      child: Icon(
-                        context.watch<RadioButtonProvider>().isOnClickChange
-                            ? Icons.radio_button_checked
-                            : Icons.radio_button_off_outlined,
-                      ),
+                    onTap: () {
+                      context.read<RadioButtonProvider>().buttonChange();
+                    },
+                    child: Icon(
+                      context.watch<RadioButtonProvider>().isOnClickChange
+                          ? Icons.radio_button_checked
+                          : Icons.radio_button_off_outlined,
+                      color: Color(0xff2BAE66),
                     ),
+                  ),
+                  SizedBox(width: 13),
                   Text(
                     'Remember me',
                     style: TextStyle(fontSize: 12, fontFamily: 'Urbanist'),
@@ -82,7 +84,7 @@ class SignupScreen extends StatelessWidget {
               ),
               child: Mybutton(title: 'Sign up'),
             ),
-            SizedBox(height: 233),
+            SizedBox(height: 222),
             Container(
               margin: EdgeInsets.only(bottom: 45),
               child: Row(
