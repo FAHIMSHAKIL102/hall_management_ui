@@ -8,6 +8,7 @@ import 'package:hall_management_ui/provider/facility_provider.dart';
 import 'package:hall_management_ui/provider/password_visibility_provider.dart';
 import 'package:hall_management_ui/provider/radio_button_provider.dart';
 import 'package:hall_management_ui/provider/range_slider_provider.dart';
+import 'package:hall_management_ui/provider/search_room_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => RadioButtonProvider()),
         ChangeNotifierProvider(create: (context) => ButtonTwoColorProvider()),
         ChangeNotifierProvider(create: (context) => ButtonThreeColorProvider()),
+        ChangeNotifierProvider(create: (context) => SearchRoomProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

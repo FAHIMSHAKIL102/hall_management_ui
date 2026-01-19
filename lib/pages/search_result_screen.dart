@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton_w124.dart';
 import 'package:hall_management_ui/pages/room_view_screen.dart';
 import 'package:hall_management_ui/provider/button_color_provider.dart';
+import 'package:hall_management_ui/provider/search_room_provider.dart';
 import 'package:provider/provider.dart';
 
 class SearchResultScreen extends StatelessWidget {
@@ -9,6 +10,9 @@ class SearchResultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final provider = context.read<SearchRoomProvider>();
+    final rooms = provider.filteredRooms;
+
     return DefaultTabController(
       length: 3,
       child: Scaffold(
@@ -22,6 +26,7 @@ class SearchResultScreen extends StatelessWidget {
               height: 56,
               color: Color(0xffFAFAFA),
               child: SearchBar(
+                onChanged: provider.setSearch,
                 leading: Icon(Icons.search),
                 shape: WidgetStatePropertyAll(
                   RoundedRectangleBorder(
@@ -38,7 +43,11 @@ class SearchResultScreen extends StatelessWidget {
             child: Consumer<ButtonColorProvider>(
               builder: (context, provider, child) {
                 return TabBar(
-                  onTap: (index) => provider.setIndex(index),
+                  onTap: (index) {
+                    WidgetsBinding.instance.addPostFrameCallback((_) {
+                      provider.setIndex(index);
+                    });
+                  },
                   indicatorColor: Colors.transparent,
                   dividerHeight: 0,
                   tabs: [
@@ -94,7 +103,7 @@ class SearchResultScreen extends StatelessWidget {
                         children: [
                           SizedBox(height: 20),
                           ...List.generate(
-                            5,
+                            rooms.length,
                             (index) => InkWell(
                               onTap: () => Navigator.push(
                                 context,
@@ -138,17 +147,19 @@ class SearchResultScreen extends StatelessWidget {
                                         crossAxisAlignment: .start,
                                         children: [
                                           Text(
-                                            'Room 507 West',
+                                            rooms[index].name,
                                             style: TextStyle(
                                               fontSize: 20,
                                               fontWeight: FontWeight.w700,
                                             ),
                                           ),
-                                          Text('YKSG-Ext 1'),
+                                          Text(
+                                            '${rooms[index].extension}-${rooms[index].direction}',
+                                          ),
                                           Row(
                                             children: [
                                               Text(
-                                                '3000TK.',
+                                                rooms[index].price.toString(),
                                                 style: TextStyle(
                                                   fontSize: 20,
                                                   fontWeight: FontWeight.w900,
@@ -192,4 +203,18 @@ class SearchResultScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+class Room {
+  final String name;
+  final String extension;
+  final String direction;
+  final int price;
+
+  Room({
+    required this.name,
+    required this.extension,
+    required this.direction,
+    required this.price,
+  });
 }

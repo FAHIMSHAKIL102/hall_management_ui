@@ -65,6 +65,12 @@ class HomeScreen extends StatelessWidget {
                   height: 56,
                   color: Color(0xffFAFAFA),
                   child: SearchBar(
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SearchResultScreen(),
+                      ),
+                    ),
                     leading: Icon(Icons.search),
                     hintText: 'Search',
                     shape: WidgetStatePropertyAll(
