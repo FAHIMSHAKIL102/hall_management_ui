@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton_w124.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton_w90.dart';
+import 'package:hall_management_ui/pages/bottom_navigation_screen.dart';
+import 'package:hall_management_ui/pages/room_view_screen.dart';
 import 'package:hall_management_ui/pages/search_result_screen.dart';
+import 'package:hall_management_ui/provider/bottom_navigator_provider.dart';
 import 'package:hall_management_ui/provider/button_color_provider.dart';
 import 'package:hall_management_ui/provider/button_three_color_provider.dart';
 import 'package:hall_management_ui/provider/button_two_color_provider.dart';
@@ -65,12 +68,15 @@ class HomeScreen extends StatelessWidget {
                   height: 56,
                   color: Color(0xffFAFAFA),
                   child: SearchBar(
-                    onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => SearchResultScreen(),
-                      ),
-                    ),
+                    onTap: () {
+                      context.read<BottomNavigatorProvider>().changeIndex(1);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => BottomNavigationScreen(),
+                        ),
+                      );
+                    },
                     leading: Icon(Icons.search),
                     hintText: 'Search',
                     shape: WidgetStatePropertyAll(
@@ -487,58 +493,64 @@ class TabOneWidget extends StatelessWidget {
             SizedBox(height: 40),
             ...List.generate(
               5,
-              (index) => Container(
-                margin: EdgeInsets.only(bottom: 20),
-                height: 141,
-                width: 381,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Color(0xffFFFFFF),
+              (index) => InkWell(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => RoomViewScreen()),
                 ),
-                child: Row(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(top: 21, left: 24),
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: AssetImage('assets/images/Room2.png'),
+                child: Container(
+                  margin: EdgeInsets.only(bottom: 20),
+                  height: 141,
+                  width: 381,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color(0xffFFFFFF),
+                  ),
+                  child: Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(top: 21, left: 24),
+                        height: 100,
+                        width: 100,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage('assets/images/Room2.png'),
+                          ),
                         ),
                       ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 37, left: 30),
-                      child: Column(
-                        crossAxisAlignment: .start,
-                        children: [
-                          Text(
-                            'Room 507 West',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                          Text('YKSG-Ext 1'),
-                          Row(
-                            children: [
-                              Text(
-                                '3000TK.',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w900,
-                                  color: Color(0xff2BAE66),
-                                ),
+                      Container(
+                        margin: EdgeInsets.only(top: 37, left: 30),
+                        child: Column(
+                          crossAxisAlignment: .start,
+                          children: [
+                            Text(
+                              'Room 507 West',
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w700,
                               ),
-                              Text('month'),
-                            ],
-                          ),
-                        ],
+                            ),
+                            Text('YKSG-Ext 1'),
+                            Row(
+                              children: [
+                                Text(
+                                  '3000TK.',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w900,
+                                    color: Color(0xff2BAE66),
+                                  ),
+                                ),
+                                Text('month'),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),

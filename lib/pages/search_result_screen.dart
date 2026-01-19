@@ -44,9 +44,7 @@ class SearchResultScreen extends StatelessWidget {
               builder: (context, provider, child) {
                 return TabBar(
                   onTap: (index) {
-                    WidgetsBinding.instance.addPostFrameCallback((_) {
-                      provider.setIndex(index);
-                    });
+                    provider.setIndex(index);
                   },
                   indicatorColor: Colors.transparent,
                   dividerHeight: 0,
