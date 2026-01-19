@@ -12,43 +12,54 @@ class BottomNavigationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bottomNavigatorProvider = context.watch<BottomNavigatorProvider>();
-    return Scaffold(
-      body: IndexedStack(
-        index: bottomNavigatorProvider.selectedIndex,
-        children: [
-          HomeScreen(),
-          SearchResultScreen(),
-          PaymentHistoryScreen(),
-          ProfileDetailsScreen(),
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
-            label: 'Home',
-            tooltip: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
-            tooltip: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.article_outlined),
-            label: 'Booking',
-            tooltip: 'Booking',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_2_outlined),
-            label: 'Profile',
-            tooltip: 'Profile',
-          ),
-        ],
-        currentIndex: bottomNavigatorProvider.selectedIndex,
-        selectedItemColor: Color(0xff2BAE66),
-        unselectedItemColor: Color(0xff000000),
-        onTap: bottomNavigatorProvider.changeIndex,
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, result) {
+        if (bottomNavigatorProvider.selectedIndex != 0) {
+          context.read<BottomNavigatorProvider>().changeIndex(0);
+        } else {
+          Navigator.of(context).pop();
+        }
+      },
+
+      child: Scaffold(
+        body: IndexedStack(
+          index: bottomNavigatorProvider.selectedIndex,
+          children: [
+            HomeScreen(),
+            SearchResultScreen(),
+            PaymentHistoryScreen(),
+            ProfileDetailsScreen(),
+          ],
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home_outlined),
+              label: 'Home',
+              tooltip: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              label: 'Search',
+              tooltip: 'Search',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.article_outlined),
+              label: 'Booking',
+              tooltip: 'Booking',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person_2_outlined),
+              label: 'Profile',
+              tooltip: 'Profile',
+            ),
+          ],
+          currentIndex: bottomNavigatorProvider.selectedIndex,
+          selectedItemColor: Color(0xff2BAE66),
+          unselectedItemColor: Color(0xff000000),
+          onTap: bottomNavigatorProvider.changeIndex,
+        ),
       ),
     );
   }
