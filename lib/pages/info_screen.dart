@@ -47,7 +47,7 @@ class InfoScreen extends StatelessWidget {
             width: 313.w,
             child: Text(
               'DIU hall app to manage everything you need',
-              style: TextStyle(fontSize: 18, fontFamily: 'Urbanist-SemiBold'),
+              style: TextStyle(fontSize: 18.sp, fontFamily: 'Urbanist-SemiBold'),
             ),
           ),
           SizedBox(height: 99.h),
@@ -62,7 +62,7 @@ class InfoScreen extends StatelessWidget {
                 height: 55.h,
                 width: 381.w,
                 decoration: BoxDecoration(
-                  border: Border.all(color: Color(0xff2BAE66), width: 3),
+                  border: Border.all(color: Color(0xff2BAE66), width: 3.r),
                   borderRadius: BorderRadius.circular(35.r),
                 ),
                 child: Center(
