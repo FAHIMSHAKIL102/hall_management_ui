@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hall_management_ui/pages/splash_screen.dart';
 import 'package:hall_management_ui/provider/bottom_navigator_provider.dart';
 import 'package:hall_management_ui/provider/button_color_provider.dart';
@@ -32,10 +33,14 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => ButtonThreeColorProvider()),
         ChangeNotifierProvider(create: (context) => SearchRoomProvider()),
       ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(fontFamily: 'Urbanist'),
-        home: SplashScreen(),
+      child: ScreenUtilInit(
+        designSize: Size(427, 952),
+        minTextAdapt: true,
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(fontFamily: 'Urbanist'),
+          home: SplashScreen(),
+        ),
       ),
     );
   }
