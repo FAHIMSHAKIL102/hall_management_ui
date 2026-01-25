@@ -23,9 +23,9 @@ class MybuttonW124 extends StatelessWidget {
         height: 38.h,
         width: 124.w,
         decoration: BoxDecoration(
-          border: Border.all(color: Color(0xff2BAE66), width: 2),
+          border: Border.all(color: Color(0xff2BAE66), width: 2.r),
           color: isSelected ? Color(0xff2BAE66) : Color(0xffFFFFFF),
-          borderRadius: BorderRadius.circular(25),
+          borderRadius: BorderRadius.circular(25.r),
         ),
         child: Center(
           child: Text(

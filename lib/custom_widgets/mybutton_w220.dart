@@ -15,7 +15,7 @@ class MybuttonW220 extends StatelessWidget {
         width: 220.w,
         decoration: BoxDecoration(
           color: Color(0xff2BAE66),
-          borderRadius: BorderRadius.circular(35),
+          borderRadius: BorderRadius.circular(35.r),
         ),
         child: Center(
           child: Text(

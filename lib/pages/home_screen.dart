@@ -103,7 +103,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           bottom: PreferredSize(
-            preferredSize: Size.fromHeight(40),
+            preferredSize: Size.fromHeight(40.h),
             child: Consumer<ButtonColorProvider>(
               builder: (context, provider, child) {
                 return TabBar(
@@ -239,7 +239,7 @@ class HomeScreen extends StatelessWidget {
                 margin: EdgeInsets.only(top: 27.h, left: 23.w),
                 child: Text(
                   'Seat Category',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                  style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w700),
                 ),
               ),
               Consumer<ButtonThreeColorProvider>(
@@ -285,11 +285,11 @@ class HomeScreen extends StatelessWidget {
                 margin: EdgeInsets.only(top: 27.h, left: 23.w),
                 child: Text(
                   'Price Range',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                  style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w700),
                 ),
               ),
               Container(
-                margin: EdgeInsets.all(5.r),
+                margin: EdgeInsets.all(5).r,
                 child: Column(
                   children: [
                     Consumer<RangeSliderProvider>(
@@ -343,7 +343,7 @@ class HomeScreen extends StatelessWidget {
                       children: facilities.map((facility) {
                         final isSelected = provider.isSelected(facility);
                         return InkWell(
-                          borderRadius: BorderRadius.circular(6),
+                          borderRadius: BorderRadius.circular(6.r),
                           onTap: () => provider.toggleFacility(facility),
                           child: Row(
                             children: [
@@ -353,9 +353,9 @@ class HomeScreen extends StatelessWidget {
                                     provider.toggleFacility(facility),
                                 activeColor: Colors.green,
                                 checkColor: Colors.white,
-                                side: BorderSide(color: Colors.green, width: 2),
+                                side: BorderSide(color: Colors.green, width: 2.r),
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(5),
+                                  borderRadius: BorderRadius.circular(5.r),
                                 ),
                               ),
                               Text(
@@ -380,8 +380,8 @@ class HomeScreen extends StatelessWidget {
                       height: 59.h,
                       width: 182.w,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        border: Border.all(color: Color(0xff2BAE66), width: 2),
+                        borderRadius: BorderRadius.circular(30.r),
+                        border: Border.all(color: Color(0xff2BAE66), width: 2.r),
                         color: Color(0xffFFFFFF),
                       ),
                       child: Center(
@@ -406,10 +406,10 @@ class HomeScreen extends StatelessWidget {
                         height: 59.h,
                         width: 182.w,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
+                          borderRadius: BorderRadius.circular(30.r),
                           border: Border.all(
                             color: Color(0xff2BAE66),
-                            width: 2,
+                            width: 2.r,
                           ),
                           color: Color(0xff2BAE66),
                         ),
@@ -465,7 +465,7 @@ class TabOneWidget extends StatelessWidget {
                         fit: BoxFit.cover,
                         image: AssetImage('assets/images/Room.png'),
                       ),
-                      borderRadius: BorderRadius.circular(45),
+                      borderRadius: BorderRadius.circular(45.r),
                     ),
                   );
                 },
@@ -502,9 +502,9 @@ class TabOneWidget extends StatelessWidget {
                 child: Container(
                   margin: EdgeInsets.only(bottom: 20.h),
                   height: 141.h,
-                  width: 381.h,
+                  width: 381.w,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(20.r),
                     color: Color(0xffFFFFFF),
                   ),
                   child: Row(
@@ -514,7 +514,7 @@ class TabOneWidget extends StatelessWidget {
                         height: 100.h,
                         width: 100.w,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(20.r),
                           image: DecorationImage(
                             fit: BoxFit.cover,
                             image: AssetImage('assets/images/Room2.png'),

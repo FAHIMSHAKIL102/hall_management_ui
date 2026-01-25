@@ -36,12 +36,15 @@ class MyApp extends StatelessWidget {
       child: ScreenUtilInit(
         designSize: Size(427, 952),
         minTextAdapt: true,
-        
-        child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(fontFamily: 'Urbanist'),
-          home: SplashScreen(),
-        ),
+        splitScreenMode: true,
+        builder: (context, child) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(fontFamily: 'Urbanist'),
+            home: child,
+          );
+        },
+        child: SplashScreen(),
       ),
     );
   }
