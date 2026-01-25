@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MybuttonW90 extends StatelessWidget {
   final String title;
@@ -19,8 +20,8 @@ class MybuttonW90 extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        height: 55,
-        width: 90,
+        height: 55.h,
+        width: 90.w,
         decoration: BoxDecoration(
           border: Border.all(color: Color(0xff2BAE66), width: 2),
           color: isSelected ? Color(0xff2BAE66) : Color(0xffFFFFFF),
@@ -30,7 +31,7 @@ class MybuttonW90 extends StatelessWidget {
           child: Text(
             title,
             style: TextStyle(
-              fontSize: 15,
+              fontSize: 15.sp,
               fontFamily: 'Urbanist',
               color: isSelected ? Color(0xffFFFFFF) : Color(0xff2BAE66),
               fontWeight: FontWeight.w600,

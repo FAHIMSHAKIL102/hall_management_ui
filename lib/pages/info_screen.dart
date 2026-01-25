@@ -17,9 +17,12 @@ class InfoScreen extends StatelessWidget {
             child: Stack(
               children: [
                 SizedBox(
-                  height: 515.h,
-                  width: 457.w,
-                  child: Image(image: AssetImage('assets/images/Vector.png')),
+                  height: 532.h,
+                  width: double.infinity,
+                  child: Image(
+                    fit: BoxFit.contain,
+                    image: AssetImage('assets/images/Vector.png'),
+                  ),
                 ),
                 Positioned(
                   top: 407.h,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hall_management_ui/custom_widgets/myTextFormfield.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
 import 'package:hall_management_ui/custom_widgets/mytextstyle.dart';
@@ -17,23 +18,23 @@ class ForgotPassScreen extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              margin: EdgeInsets.only(top: 156),
-              height: 60,
+              margin: EdgeInsets.only(top: 156.h),
+              height: 60.h,
               child: myText45('Forgot Password?'),
             ),
-            SizedBox(height: 80),
-            Container(
-              height: 17,
+            SizedBox(height: 80.h),
+            SizedBox(
+              height: 17.h,
               child: Text('Please enter your email address'),
             ),
-            SizedBox(height: 24),
+            SizedBox(height: 24.h),
             Mytextformfield(
               myController: emailController,
               myHintText: 'Email',
               myObscureText: false,
               myPrefixIcon: Icon(Icons.email),
             ),
-            SizedBox(height: 18),
+            SizedBox(height: 18.h),
             Mybutton(
               title: 'Continue',
               onTap: () => Navigator.push(
@@ -43,9 +44,9 @@ class ForgotPassScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 288),
+            SizedBox(height: 288.h),
             Container(
-              margin: EdgeInsets.only(bottom: 45),
+              margin: EdgeInsets.only(bottom: 45.h),
               child: Row(
                 mainAxisAlignment: .center,
                 children: [
@@ -53,7 +54,7 @@ class ForgotPassScreen extends StatelessWidget {
                     "Remember your password?",
                     style: TextStyle(
                       fontFamily: 'Urbanist-Regular',
-                      fontSize: 14,
+                      fontSize: 14.sp,
                     ),
                   ),
                   InkWell(

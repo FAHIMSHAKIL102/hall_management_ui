@@ -27,6 +27,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     return Scaffold(
       body: Image(
         height: double.infinity,
+        width: double.infinity,
         fit: BoxFit.fitHeight,
         image: AssetImage('assets/images/Welcome.png'),
       ),

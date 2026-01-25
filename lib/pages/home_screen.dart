@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton_w124.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton_w90.dart';
 import 'package:hall_management_ui/pages/bottom_navigation_screen.dart';
@@ -22,27 +23,27 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          toolbarHeight: 200,
+          toolbarHeight: 200.h,
           flexibleSpace: SafeArea(
             child: Column(
               crossAxisAlignment: .start,
               children: [
                 Container(
-                  margin: EdgeInsets.only(left: 23),
+                  margin: EdgeInsets.only(left: 23.w),
                   child: Row(
                     children: [
                       SizedBox(
-                        height: 34,
-                        width: 34,
+                        height: 34.h,
+                        width: 34.w,
                         child: Image(
                           image: AssetImage('assets/images/diulogo.png'),
                         ),
                       ),
-                      SizedBox(width: 20),
+                      SizedBox(width: 20.w),
                       Text(
                         'DIU HALL',
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 20.sp,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
@@ -50,22 +51,22 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 28, left: 23),
-                  height: 41,
-                  width: 307,
+                  margin: EdgeInsets.only(top: 28.h, left: 23.w),
+                  height: 41.h,
+                  width: 307.w,
                   child: Text(
                     'Hello, Kabir!',
                     style: TextStyle(
-                      fontSize: 34,
+                      fontSize: 34.sp,
                       fontWeight: FontWeight.w700,
                       color: Color(0xff2BAE66),
                     ),
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 18, left: 24, bottom: 23),
-                  width: 381,
-                  height: 56,
+                  margin: EdgeInsets.only(top: 18.h, left: 24.w, bottom: 23.h),
+                  width: 381.w,
+                  height: 56.h,
                   color: Color(0xffFAFAFA),
                   child: SearchBar(
                     onTap: () {
@@ -159,35 +160,35 @@ class HomeScreen extends StatelessWidget {
       context: context,
       builder: (context) {
         return SizedBox(
-          height: 850,
+          height: 850.h,
           child: Column(
             crossAxisAlignment: .start,
             children: [
               Container(
-                margin: EdgeInsets.only(top: 30, left: 163, bottom: 23),
+                margin: EdgeInsets.only(top: 30.h, left: 163.w, bottom: 23.h),
                 child: Text(
                   'Filter Hall',
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
+                  style: TextStyle(fontSize: 25.sp, fontWeight: FontWeight.w700),
                 ),
               ),
               Divider(),
-              SizedBox(height: 24),
+              SizedBox(height: 24.h),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 23),
+                margin: EdgeInsets.symmetric(horizontal: 23.w),
                 child: Row(
                   mainAxisAlignment: .spaceBetween,
                   children: [
                     Text(
                       'Branch',
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 18.sp,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
                     Text(
                       'See All',
                       style: TextStyle(
-                        fontSize: 13,
+                        fontSize: 13.sp,
                         fontWeight: FontWeight.w700,
                         color: Color(0xff2BAE66),
                       ),
@@ -202,7 +203,7 @@ class HomeScreen extends StatelessWidget {
                       ButtonTwoColorProvider value,
                       Widget? child,
                     ) => Container(
-                      margin: EdgeInsets.only(top: 18, left: 23),
+                      margin: EdgeInsets.only(top: 18.h, left: 23.w),
                       child: Row(
                         mainAxisAlignment: .spaceAround,
                         children: [
@@ -235,7 +236,7 @@ class HomeScreen extends StatelessWidget {
                     ),
               ),
               Container(
-                margin: EdgeInsets.only(top: 27, left: 23),
+                margin: EdgeInsets.only(top: 27.h, left: 23.w),
                 child: Text(
                   'Seat Category',
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
@@ -248,7 +249,7 @@ class HomeScreen extends StatelessWidget {
                       ButtonThreeColorProvider value,
                       Widget? child,
                     ) => Container(
-                      margin: EdgeInsets.only(top: 18, left: 23),
+                      margin: EdgeInsets.only(top: 18.h, left: 23.w),
                       child: Row(
                         mainAxisAlignment: .spaceAround,
                         children: [
@@ -281,14 +282,14 @@ class HomeScreen extends StatelessWidget {
                     ),
               ),
               Container(
-                margin: EdgeInsets.only(top: 27, left: 23),
+                margin: EdgeInsets.only(top: 27.h, left: 23.w),
                 child: Text(
                   'Price Range',
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
                 ),
               ),
               Container(
-                margin: EdgeInsets.all(5),
+                margin: EdgeInsets.all(5.r),
                 child: Column(
                   children: [
                     Consumer<RangeSliderProvider>(
@@ -298,7 +299,7 @@ class HomeScreen extends StatelessWidget {
                             Text(
                               'Range: ${provider.currentValue.start.toInt()}-${provider.currentValue.end.toInt()}',
                             ),
-                            SizedBox(height: 10),
+                            SizedBox(height: 10.h),
                             SliderTheme(
                               data: SliderThemeData(
                                 inactiveTrackColor: Color(0xffFFFFFF),
@@ -328,16 +329,16 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(top: 7, left: 23),
+                margin: EdgeInsets.only(top: 7.h, left: 23.w),
                 child: Text(
                   'Facilities',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                  style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w700),
                 ),
               ),
               Consumer<FacilityProvider>(
                 builder: (BuildContext context, provider, child) {
                   return Container(
-                    margin: EdgeInsets.only(top: 18, left: 23),
+                    margin: EdgeInsets.only(top: 18.h, left: 23.w),
                     child: Row(
                       children: facilities.map((facility) {
                         final isSelected = provider.isSelected(facility);
@@ -369,15 +370,15 @@ class HomeScreen extends StatelessWidget {
                   );
                 },
               ),
-              SizedBox(height: 150),
+              SizedBox(height: 150.h),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 24),
+                margin: EdgeInsets.symmetric(horizontal: 24.w),
                 child: Row(
                   mainAxisAlignment: .spaceAround,
                   children: [
                     Container(
-                      height: 59,
-                      width: 182,
+                      height: 59.h,
+                      width: 182.w,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
                         border: Border.all(color: Color(0xff2BAE66), width: 2),
@@ -387,7 +388,7 @@ class HomeScreen extends StatelessWidget {
                         child: Text(
                           'Reset',
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.w700,
                             color: Color(0xff2BAE66),
                           ),
@@ -402,8 +403,8 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       child: Container(
-                        height: 59,
-                        width: 182,
+                        height: 59.h,
+                        width: 182.w,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
                           border: Border.all(
@@ -416,7 +417,7 @@ class HomeScreen extends StatelessWidget {
                           child: Text(
                             'Apply Filter',
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w700,
                               color: Color(0xffFFFFFF),
                             ),
@@ -446,19 +447,19 @@ class TabOneWidget extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-              height: 401,
+              height: 401.h,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
                   return Container(
                     margin: EdgeInsets.only(
-                      top: 23,
-                      left: 21,
-                      right: 7,
-                      bottom: 33,
+                      top: 23.h,
+                      left: 21.w,
+                      right: 7.w,
+                      bottom: 33.h,
                     ),
-                    height: 401,
-                    width: 302,
+                    height: 401.h,
+                    width: 302.w,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         fit: BoxFit.cover,
@@ -471,18 +472,18 @@ class TabOneWidget extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 23),
+              margin: EdgeInsets.symmetric(horizontal: 23.w),
               child: Row(
                 mainAxisAlignment: .spaceBetween,
                 children: [
                   Text(
                     'Available rooms',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+                    style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w700),
                   ),
                   Text(
                     'See All',
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 18.sp,
                       fontWeight: FontWeight.w700,
                       color: Color(0xff2BAE66),
                     ),
@@ -490,7 +491,7 @@ class TabOneWidget extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 40),
+            SizedBox(height: 40.h),
             ...List.generate(
               5,
               (index) => InkWell(
@@ -499,9 +500,9 @@ class TabOneWidget extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => RoomViewScreen()),
                 ),
                 child: Container(
-                  margin: EdgeInsets.only(bottom: 20),
-                  height: 141,
-                  width: 381,
+                  margin: EdgeInsets.only(bottom: 20.h),
+                  height: 141.h,
+                  width: 381.h,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: Color(0xffFFFFFF),
@@ -509,9 +510,9 @@ class TabOneWidget extends StatelessWidget {
                   child: Row(
                     children: [
                       Container(
-                        margin: EdgeInsets.only(top: 21, left: 24),
-                        height: 100,
-                        width: 100,
+                        margin: EdgeInsets.only(top: 21.h, left: 24.w),
+                        height: 100.h,
+                        width: 100.w,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           image: DecorationImage(
@@ -521,14 +522,14 @@ class TabOneWidget extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 37, left: 30),
+                        margin: EdgeInsets.only(top: 37.h, left: 30.w),
                         child: Column(
                           crossAxisAlignment: .start,
                           children: [
                             Text(
                               'Room 507 West',
                               style: TextStyle(
-                                fontSize: 20,
+                                fontSize: 20.sp,
                                 fontWeight: FontWeight.w700,
                               ),
                             ),
@@ -538,7 +539,7 @@ class TabOneWidget extends StatelessWidget {
                                 Text(
                                   '3000TK.',
                                   style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: 20.sp,
                                     fontWeight: FontWeight.w900,
                                     color: Color(0xff2BAE66),
                                   ),

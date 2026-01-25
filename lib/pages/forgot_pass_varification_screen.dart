@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
 import 'package:hall_management_ui/custom_widgets/mytextstyle.dart';
 import 'package:hall_management_ui/pages/set_pass_screen.dart';
@@ -17,25 +18,25 @@ class ForgotPassVarificationScreen extends StatelessWidget {
           crossAxisAlignment: .center,
           children: [
             Container(
-              margin: EdgeInsets.only(top: 156),
-              height: 60,
+              margin: EdgeInsets.only(top: 156.h),
+              height: 60.h,
               child: myText45('Please verify'),
             ),
-            SizedBox(height: 40),
-            Container(
-              height: 17,
+            SizedBox(height: 40.h),
+            SizedBox(
+              height: 17.h,
               child: Text('Please Check your email for the varification code'),
             ),
-            SizedBox(height: 48),
+            SizedBox(height: 48.h),
             Container(
-              padding: EdgeInsets.only(bottom: 42, left: 47, right: 47),
+              padding: EdgeInsets.only(bottom: 42.h, left: 47.w, right: 47.w),
               child: PinCodeTextField(
                 keyboardType: TextInputType.number,
                 appContext: context,
                 length: 4,
                 pinTheme: PinTheme(
-                  fieldHeight: 74,
-                  fieldWidth: 74,
+                  fieldHeight: 74.h,
+                  fieldWidth: 74.h,
                   shape: PinCodeFieldShape.box,
                   borderRadius: BorderRadius.circular(10),
                   activeColor: Color(0xff2BAE66),
@@ -54,11 +55,11 @@ class ForgotPassVarificationScreen extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 79),
-              height: 14,
+              margin: EdgeInsets.only(top: 79.h),
+              height: 14.h,
               child: RichText(
                 text: TextSpan(
-                  style: TextStyle(fontSize: 12, color: Color(0xff000000)),
+                  style: TextStyle(fontSize: 12.sp, color: Color(0xff000000)),
                   children: <TextSpan>[
                     TextSpan(text: 'Resend code in '),
                     TextSpan(
@@ -70,9 +71,9 @@ class ForgotPassVarificationScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 177),
+            SizedBox(height: 177.h),
             Container(
-              margin: EdgeInsets.only(bottom: 45),
+              margin: EdgeInsets.only(bottom: 45.h),
               child: Row(
                 mainAxisAlignment: .center,
                 children: [
@@ -80,7 +81,7 @@ class ForgotPassVarificationScreen extends StatelessWidget {
                     "Remember your password?",
                     style: TextStyle(
                       fontFamily: 'Urbanist-Regular',
-                      fontSize: 14,
+                      fontSize: 14.sp,
                     ),
                   ),
                   InkWell(

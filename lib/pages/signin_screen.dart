@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hall_management_ui/custom_widgets/myTextFormfield.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
 import 'package:hall_management_ui/custom_widgets/mytextstyle.dart';
@@ -28,11 +29,11 @@ class _SigninScreenState extends State<SigninScreen> {
           crossAxisAlignment: .center,
           children: [
             Container(
-              margin: EdgeInsets.only(top: 104),
-              height: 60,
+              margin: EdgeInsets.only(top: 104.h),
+              height: 60.h,
               child: myText45("Let's you in"),
             ),
-            SizedBox(height: 125),
+            SizedBox(height: 125.h),
             Mytextformfield(
               myController: emailController,
               myHintText: 'Email',
@@ -59,7 +60,7 @@ class _SigninScreenState extends State<SigninScreen> {
               },
             ),
             SizedBox(
-              height: 25,
+              height: 25.h,
               child: Row(
                 mainAxisAlignment: .center,
                 crossAxisAlignment: .center,
@@ -81,15 +82,15 @@ class _SigninScreenState extends State<SigninScreen> {
                       );
                     },
                   ),
-                  SizedBox(width: 13),
+                  SizedBox(width: 13.w),
                   Text(
                     'Remember me',
-                    style: TextStyle(fontSize: 12, fontFamily: 'Urbanist'),
+                    style: TextStyle(fontSize: 12.sp, fontFamily: 'Urbanist'),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 23),
+            SizedBox(height: 23.h),
             Mybutton(
               title: 'Sign in',
               onTap: () => Navigator.pushReplacement(
@@ -99,7 +100,7 @@ class _SigninScreenState extends State<SigninScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 42),
+            SizedBox(height: 42.h),
             SizedBox(
               child: InkWell(
                 onTap: () => Navigator.push(
@@ -109,7 +110,7 @@ class _SigninScreenState extends State<SigninScreen> {
                 child: Text(
                   'Forgot password?',
                   style: TextStyle(
-                    fontSize: 12,
+                    fontSize: 12.sp,
                     fontFamily: 'Urbanist',
                     color: Color(0xff2BAE66),
                     fontWeight: FontWeight.w700,
@@ -117,9 +118,9 @@ class _SigninScreenState extends State<SigninScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 166),
+            SizedBox(height: 166.h),
             Container(
-              margin: EdgeInsets.only(bottom: 45),
+              margin: EdgeInsets.only(bottom: 45.h),
               child: Row(
                 mainAxisAlignment: .center,
                 children: [
@@ -127,10 +128,10 @@ class _SigninScreenState extends State<SigninScreen> {
                     "Don't have an account?",
                     style: TextStyle(
                       fontFamily: 'Urbanist-Regular',
-                      fontSize: 14,
+                      fontSize: 14.sp,
                     ),
                   ),
-                  SizedBox(width: 2),
+                  SizedBox(width: 2.w),
                   InkWell(
                     onTap: () {
                       Navigator.push(

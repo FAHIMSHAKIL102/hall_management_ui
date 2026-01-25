@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hall_management_ui/custom_widgets/myTextFormfield.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
 import 'package:hall_management_ui/pages/confirmation_screen.dart';
@@ -30,7 +31,7 @@ class ProfileInfoScreen extends StatelessWidget {
         title: Text(
           'Fill your profile',
           style: TextStyle(
-            fontSize: 32,
+            fontSize: 32.sp,
             fontWeight: FontWeight.w700,
             color: Color(0xff2BAE66),
           ),
@@ -41,20 +42,20 @@ class ProfileInfoScreen extends StatelessWidget {
           crossAxisAlignment: .center,
           children: [
             SizedBox(
-              height: 145,
-              width: 165,
+              height: 145.h,
+              width: 165.w,
               child: Stack(
                 children: [
                   CircleAvatar(
-                    radius: 72.5,
+                    radius: 72.5.r,
                     backgroundImage: AssetImage('assets/images/Ellipse.png'),
                   ),
                   Positioned(
-                    top: 100,
-                    left: 115,
-                    bottom: 20,
+                    top: 100.h,
+                    left: 115.w,
+                    bottom: 20.h,
                     child: CircleAvatar(
-                      radius: 20,
+                      radius: 20.r,
                       backgroundColor: Color(0xff2BAE66),
                       child: Icon(
                         Icons.camera_alt,
@@ -66,7 +67,7 @@ class ProfileInfoScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 25),
+            SizedBox(height: 25.h),
             Mytextformfield(
               myController: nameController,
               myHintText: 'Full Name',
@@ -83,7 +84,7 @@ class ProfileInfoScreen extends StatelessWidget {
               myObscureText: false,
             ),
             Container(
-              margin: EdgeInsets.only(left: 24, right: 25, bottom: 25),
+              margin: EdgeInsets.only(left: 24.w, right: 25.w, bottom: 25.h),
               child: DropdownButtonFormField<String>(
                 decoration: InputDecoration(
                   filled: true,
@@ -113,7 +114,7 @@ class ProfileInfoScreen extends StatelessWidget {
               myObscureText: false,
             ),
             Container(
-              margin: EdgeInsets.only(left: 24, right: 25, bottom: 25),
+              margin: EdgeInsets.only(left: 24.w, right: 25.w, bottom: 25.h),
               child: IntlPhoneField(
                 initialCountryCode: 'BD',
                 decoration: InputDecoration(
@@ -132,9 +133,9 @@ class ProfileInfoScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 6),
+            SizedBox(height: 6.h),
             SizedBox(
-              height: 25,
+              height: 25.h,
               child: Row(
                 mainAxisAlignment: .center,
                 children: [
@@ -149,15 +150,15 @@ class ProfileInfoScreen extends StatelessWidget {
                       color: Color(0xff2BAE66),
                     ),
                   ),
-                  SizedBox(width: 13),
+                  SizedBox(width: 13.w),
                   Text(
                     'I accept of the terms and conditions',
-                    style: TextStyle(fontSize: 12, fontFamily: 'Urbanist'),
+                    style: TextStyle(fontSize: 12.sp, fontFamily: 'Urbanist'),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 31),
+            SizedBox(height: 31.h),
             Mybutton(
               title: 'Sign up',
               onTap: () {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: must_be_immutable
 class Mytextformfield extends StatelessWidget {
@@ -21,7 +22,7 @@ class Mytextformfield extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 24, right: 25, bottom: 25),
+      margin: EdgeInsets.only(left: 24.w, right: 25.w, bottom: 25.h),
       child: TextFormField(
         controller: myController,
         obscureText: myObscureText,

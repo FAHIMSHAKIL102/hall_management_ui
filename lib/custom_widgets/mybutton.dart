@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Mybutton extends StatelessWidget {
   final String title;
@@ -10,8 +11,8 @@ class Mybutton extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        height: 55,
-        width: 381,
+        height: 55.h,
+        width: 381.w,
         decoration: BoxDecoration(
           color: Color(0xff2BAE66),
           borderRadius: BorderRadius.circular(35),
@@ -20,7 +21,7 @@ class Mybutton extends StatelessWidget {
           child: Text(
             title,
             style: TextStyle(
-              fontSize: 16,
+              fontSize: 16.sp,
               fontFamily: 'Urbanist',
               color: Color(0xffFFFFFF),
               fontWeight: FontWeight.w500,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hall_management_ui/custom_widgets/myTextFormfield.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
 import 'package:hall_management_ui/custom_widgets/mytextstyle.dart';
@@ -18,11 +19,11 @@ class SetPassScreen extends StatelessWidget {
           crossAxisAlignment: .center,
           children: [
             Container(
-              margin: EdgeInsets.only(top: 177),
-              height: 54,
+              margin: EdgeInsets.only(top: 177.h),
+              height: 54.h,
               child: myText45("Set password"),
             ),
-            SizedBox(height: 58),
+            SizedBox(height: 58.h),
             Consumer<PasswordVisibilityProvider>(
               builder: (context, value, child) {
                 return Column(
@@ -61,7 +62,7 @@ class SetPassScreen extends StatelessWidget {
                 );
               },
             ),
-            SizedBox(height: 44),
+            SizedBox(height: 44.h),
             Mybutton(
               title: 'Reset',
               onTap: () => Navigator.push(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hall_management_ui/custom_widgets/myTextFormfield.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
@@ -13,19 +14,19 @@ class EditProfileScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Edit your profile',
-          style: TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
+          style: TextStyle(fontSize: 25.sp, fontWeight: FontWeight.w700),
         ),
       ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: .center,
           children: [
-            SizedBox(height: 25),
+            SizedBox(height: 25.h),
             Mytextformfield(myHintText: 'Full Name', myObscureText: false),
             Mytextformfield(myHintText: 'Student ID', myObscureText: false),
             Mytextformfield(myHintText: 'Department', myObscureText: false),
             Container(
-              margin: EdgeInsets.only(left: 24, right: 25, bottom: 25),
+              margin: EdgeInsets.only(left: 24.w, right: 25.w, bottom: 25.h),
               child: DropdownButtonFormField<String>(
                 decoration: InputDecoration(
                   filled: true,
@@ -51,7 +52,7 @@ class EditProfileScreen extends StatelessWidget {
             ),
             Mytextformfield(myHintText: 'Date of birth', myObscureText: false),
             Container(
-              margin: EdgeInsets.only(left: 24, right: 25, bottom: 25),
+              margin: EdgeInsets.only(left: 24.w, right: 25.w, bottom: 25.h),
               child: IntlPhoneField(
                 initialCountryCode: 'BD',
                 decoration: InputDecoration(
@@ -70,7 +71,7 @@ class EditProfileScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 75),
+            SizedBox(height: 75.h),
             InkWell(
               onTap: () {
                 Navigator.pop(context);

@@ -36,6 +36,7 @@ class MyApp extends StatelessWidget {
       child: ScreenUtilInit(
         designSize: Size(427, 952),
         minTextAdapt: true,
+        
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(fontFamily: 'Urbanist'),

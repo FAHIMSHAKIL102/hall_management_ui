@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hall_management_ui/custom_widgets/myTextFormfield.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton.dart';
 import 'package:hall_management_ui/custom_widgets/mytextstyle.dart';
@@ -22,11 +23,11 @@ class SignupScreen extends StatelessWidget {
           crossAxisAlignment: .center,
           children: [
             Container(
-              margin: EdgeInsets.only(top: 177),
-              height: 54,
+              margin: EdgeInsets.only(top: 177.h),
+              height: 54.h,
               child: myText45("Create an account"),
             ),
-            SizedBox(height: 58),
+            SizedBox(height: 58.h),
             Mytextformfield(
               myController: emailController,
               myHintText: 'Email',
@@ -52,7 +53,7 @@ class SignupScreen extends StatelessWidget {
               },
             ),
             SizedBox(
-              height: 25,
+              height: 25.h,
               child: Row(
                 mainAxisAlignment: .center,
                 crossAxisAlignment: .center,
@@ -68,15 +69,15 @@ class SignupScreen extends StatelessWidget {
                       color: Color(0xff2BAE66),
                     ),
                   ),
-                  SizedBox(width: 13),
+                  SizedBox(width: 13.w),
                   Text(
                     'Remember me',
-                    style: TextStyle(fontSize: 12, fontFamily: 'Urbanist'),
+                    style: TextStyle(fontSize: 12.sp, fontFamily: 'Urbanist'),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 23),
+            SizedBox(height: 23.h),
             Mybutton(
               title: 'Sign up',
               onTap: () => Navigator.push(
@@ -84,9 +85,9 @@ class SignupScreen extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => VarificationScreen()),
               ),
             ),
-            SizedBox(height: 222),
+            SizedBox(height: 222.h),
             Container(
-              margin: EdgeInsets.only(bottom: 45),
+              margin: EdgeInsets.only(bottom: 45.h),
               child: Row(
                 mainAxisAlignment: .center,
                 children: [
@@ -94,7 +95,7 @@ class SignupScreen extends StatelessWidget {
                     "Already have an account?",
                     style: TextStyle(
                       fontFamily: 'Urbanist-Regular',
-                      fontSize: 14,
+                      fontSize: 14.sp,
                     ),
                   ),
                   InkWell(

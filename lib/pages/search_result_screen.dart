@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hall_management_ui/custom_widgets/mybutton_w124.dart';
 import 'package:hall_management_ui/pages/room_view_screen.dart';
 import 'package:hall_management_ui/provider/button_color_provider.dart';
@@ -18,28 +19,28 @@ class SearchResultScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          toolbarHeight: 100,
+          toolbarHeight: 100.h,
           actions: [
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 22),
-              width: 381,
-              height: 56,
+              margin: EdgeInsets.symmetric(horizontal: 22.w),
+              width: 381.w,
+              height: 56.h,
               color: Color(0xffFAFAFA),
               child: SearchBar(
                 onChanged: provider.setSearch,
                 leading: Icon(Icons.search),
                 shape: WidgetStatePropertyAll(
                   RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(10.r),
                   ),
                 ),
                 elevation: WidgetStatePropertyAll(0),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 20.h),
           ],
           bottom: PreferredSize(
-            preferredSize: Size.fromHeight(40),
+            preferredSize: Size.fromHeight(40.h),
             child: Consumer<ButtonColorProvider>(
               builder: (context, provider, child) {
                 return TabBar(
@@ -83,11 +84,11 @@ class SearchResultScreen extends StatelessWidget {
                 crossAxisAlignment: .start,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(left: 24, top: 10, bottom: 14),
+                    margin: EdgeInsets.only(left: 24.w, top: 10.h, bottom: 14.h),
                     child: Text(
                       'Filtered(2,532)',
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 20.sp,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
@@ -96,10 +97,10 @@ class SearchResultScreen extends StatelessWidget {
                     width: double.infinity,
                     color: Color(0xffF5F5F6),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 24),
+                      padding:  EdgeInsets.symmetric(horizontal: 24.w),
                       child: Column(
                         children: [
-                          SizedBox(height: 20),
+                          SizedBox(height: 20.h),
                           ...List.generate(
                             rooms.length,
                             (index) => InkWell(
@@ -110,22 +111,22 @@ class SearchResultScreen extends StatelessWidget {
                                 ),
                               ),
                               child: Container(
-                                margin: EdgeInsets.only(bottom: 20),
-                                height: 141,
-                                width: 381,
+                                margin: EdgeInsets.only(bottom: 20.h),
+                                height: 141.h,
+                                width: 381.w,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.circular(20.r),
                                   color: Color(0xffFFFFFF),
                                 ),
                                 child: Row(
                                   children: [
                                     Container(
                                       margin: EdgeInsets.only(
-                                        top: 21,
-                                        left: 24,
+                                        top: 21.h,
+                                        left: 24.w,
                                       ),
-                                      height: 100,
-                                      width: 100,
+                                      height: 100.h,
+                                      width: 100.w,
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(20),
                                         image: DecorationImage(
@@ -138,8 +139,8 @@ class SearchResultScreen extends StatelessWidget {
                                     ),
                                     Container(
                                       margin: EdgeInsets.only(
-                                        top: 37,
-                                        left: 30,
+                                        top: 37.h,
+                                        left: 30.w,
                                       ),
                                       child: Column(
                                         crossAxisAlignment: .start,
@@ -147,7 +148,7 @@ class SearchResultScreen extends StatelessWidget {
                                           Text(
                                             rooms[index].name,
                                             style: TextStyle(
-                                              fontSize: 20,
+                                              fontSize: 20.sp,
                                               fontWeight: FontWeight.w700,
                                             ),
                                           ),
@@ -159,7 +160,7 @@ class SearchResultScreen extends StatelessWidget {
                                               Text(
                                                 rooms[index].price.toString(),
                                                 style: TextStyle(
-                                                  fontSize: 20,
+                                                  fontSize: 20.sp,
                                                   fontWeight: FontWeight.w900,
                                                   color: Color(0xff2BAE66),
                                                 ),
@@ -183,17 +184,17 @@ class SearchResultScreen extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(left: 24, top: 10, bottom: 14),
+              margin: EdgeInsets.only(left: 24.w, top: 10.h, bottom: 14.h),
               child: Text(
                 'Filtered(2,532)',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+                style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w700),
               ),
             ),
             Container(
-              margin: EdgeInsets.only(left: 24, top: 10, bottom: 14),
+              margin: EdgeInsets.only(left: 24.w, top: 10.h, bottom: 14.h),
               child: Text(
                 'Filtered(2,532)',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+                style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w700),
               ),
             ),
           ],
