@@ -69,7 +69,7 @@ class InfoScreen extends StatelessWidget {
                 height: 55.h,
                 width: 381.w,
                 decoration: BoxDecoration(
-                  border: Border.all(color: Color(0xff2BAE66), width: 3),
+                  border: Border.all(color: Color(0xff2BAE66), width: 3.r),
                   borderRadius: BorderRadius.circular(35.r),
                 ),
                 child: Center(

@@ -123,7 +123,7 @@ class RoomViewScreen extends StatelessWidget {
                               height: 99.h,
                               width: 142.w,
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
+                                borderRadius: BorderRadius.circular(20.r),
                                 image: DecorationImage(
                                   fit: BoxFit.cover,
                                   image: AssetImage(
@@ -137,7 +137,7 @@ class RoomViewScreen extends StatelessWidget {
                               height: 99.h,
                               width: 142.w,
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
+                                borderRadius: BorderRadius.circular(20.r),
                                 image: DecorationImage(
                                   fit: BoxFit.cover,
                                   image: AssetImage(
@@ -410,7 +410,7 @@ class RoomViewScreen extends StatelessWidget {
                     height: 176.h,
                     width: 380.w,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(20.r),
                       image: DecorationImage(
                         fit: BoxFit.cover,
                         image: AssetImage('assets/images/Location.png'),
@@ -447,14 +447,14 @@ class RoomViewScreen extends StatelessWidget {
                     margin: EdgeInsets.only(top: 19.h),
                     decoration: BoxDecoration(
                       color: Color(0xffF5F5F5),
-                      borderRadius: BorderRadius.circular(40),
+                      borderRadius: BorderRadius.circular(40.r),
                     ),
                     child: Column(
                       children: [
                         Container(
                           decoration: BoxDecoration(
                             color: Color(0xffFFFFFF),
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(20.r),
                           ),
                           margin: EdgeInsets.symmetric(
                             horizontal: 25.w,
@@ -480,7 +480,7 @@ class RoomViewScreen extends StatelessWidget {
                                   width: 60.w,
                                   decoration: BoxDecoration(
                                     color: Color(0xff2BAE66),
-                                    borderRadius: BorderRadius.circular(20),
+                                    borderRadius: BorderRadius.circular(20.r),
                                   ),
                                   child: Row(
                                     mainAxisAlignment: .center,
@@ -519,7 +519,7 @@ class RoomViewScreen extends StatelessWidget {
                         Container(
                           decoration: BoxDecoration(
                             color: Color(0xffFFFFFF),
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(20.r),
                           ),
                           margin: EdgeInsets.symmetric(
                             horizontal: 25.w,
@@ -545,7 +545,7 @@ class RoomViewScreen extends StatelessWidget {
                                   width: 60.w,
                                   decoration: BoxDecoration(
                                     color: Color(0xff2BAE66),
-                                    borderRadius: BorderRadius.circular(20),
+                                    borderRadius: BorderRadius.circular(20.r),
                                   ),
                                   child: Row(
                                     mainAxisAlignment: .center,
@@ -584,7 +584,7 @@ class RoomViewScreen extends StatelessWidget {
                         Container(
                           decoration: BoxDecoration(
                             color: Color(0xffFFFFFF),
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(20.r),
                           ),
                           margin: EdgeInsets.symmetric(
                             horizontal: 25.w,
@@ -610,7 +610,7 @@ class RoomViewScreen extends StatelessWidget {
                                   width: 60.w,
                                   decoration: BoxDecoration(
                                     color: Color(0xff2BAE66),
-                                    borderRadius: BorderRadius.circular(20),
+                                    borderRadius: BorderRadius.circular(20.r),
                                   ),
                                   child: Row(
                                     mainAxisAlignment: .center,
@@ -652,7 +652,7 @@ class RoomViewScreen extends StatelessWidget {
                           height: 52.h,
                           decoration: BoxDecoration(
                             color: Color(0xff2BAE66).withValues(alpha: .13),
-                            borderRadius: BorderRadius.circular(30),
+                            borderRadius: BorderRadius.circular(30.r),
                           ),
                           child: Row(
                             mainAxisAlignment: .center,
@@ -683,8 +683,8 @@ class RoomViewScreen extends StatelessWidget {
             height: 124.h,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(30),
-                topRight: Radius.circular(30),
+                topLeft: Radius.circular(30.r),
+                topRight: Radius.circular(30.r),
               ),
             ),
             child: Row(
@@ -736,7 +736,7 @@ class RoomViewScreen extends StatelessWidget {
                                     width: 173.w,
                                     height: 167.h,
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(20),
+                                      borderRadius: BorderRadius.circular(20.r),
                                       border: Border.all(
                                         color: Color(0xffD9D9D9),
                                       ),
@@ -750,7 +750,7 @@ class RoomViewScreen extends StatelessWidget {
                                           width: 24.w,
                                           decoration: BoxDecoration(
                                             borderRadius: BorderRadius.circular(
-                                              100,
+                                              100.r,
                                             ),
                                             border: Border.all(
                                               color: Color(0xffD9D9D9),
@@ -776,10 +776,10 @@ class RoomViewScreen extends StatelessWidget {
                                     width: 173.w,
                                     height: 167.h,
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(20),
+                                      borderRadius: BorderRadius.circular(20.r),
                                       border: Border.all(
                                         color: Color(0xff2BAE66),
-                                        width: 1,
+                                        width: 1.r,
                                       ),
                                     ),
                                     child: Column(
@@ -791,7 +791,7 @@ class RoomViewScreen extends StatelessWidget {
                                           width: 24.w,
                                           decoration: BoxDecoration(
                                             borderRadius: BorderRadius.circular(
-                                              100,
+                                              100.r,
                                             ),
                                             border: Border.all(
                                               color: Color(0xff2BAE66),
@@ -823,7 +823,7 @@ class RoomViewScreen extends StatelessWidget {
                                     width: 173.w,
                                     height: 167.h,
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(20),
+                                      borderRadius: BorderRadius.circular(20.r),
                                       border: Border.all(
                                         color: Color(0xffFFB1B1),
                                       ),
@@ -837,7 +837,7 @@ class RoomViewScreen extends StatelessWidget {
                                           width: 24.w,
                                           decoration: BoxDecoration(
                                             borderRadius: BorderRadius.circular(
-                                              100,
+                                              100.r,
                                             ),
                                             border: Border.all(
                                               color: Color(0xffFFB1B1),
@@ -863,7 +863,7 @@ class RoomViewScreen extends StatelessWidget {
                                     width: 173.w,
                                     height: 167.h,
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(20),
+                                      borderRadius: BorderRadius.circular(20.r),
                                       border: Border.all(
                                         color: Color(0xffFFB1B1),
                                       ),
@@ -877,7 +877,7 @@ class RoomViewScreen extends StatelessWidget {
                                           width: 24.w,
                                           decoration: BoxDecoration(
                                             borderRadius: BorderRadius.circular(
-                                              100,
+                                              100.r,
                                             ),
                                             border: Border.all(
                                               color: Color(0xffFFB1B1),

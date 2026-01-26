@@ -289,7 +289,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: EdgeInsets.all(5).r,
+                margin: EdgeInsets.all(5.r),
                 child: Column(
                   children: [
                     Consumer<RangeSliderProvider>(

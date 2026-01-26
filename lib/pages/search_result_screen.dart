@@ -128,7 +128,7 @@ class SearchResultScreen extends StatelessWidget {
                                       height: 100.h,
                                       width: 100.w,
                                       decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(20),
+                                        borderRadius: BorderRadius.circular(20.r),
                                         image: DecorationImage(
                                           fit: BoxFit.cover,
                                           image: AssetImage(

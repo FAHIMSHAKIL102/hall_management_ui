@@ -38,7 +38,7 @@ class ForgotPassVarificationScreen extends StatelessWidget {
                   fieldHeight: 74.h,
                   fieldWidth: 74.h,
                   shape: PinCodeFieldShape.box,
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(10.r),
                   activeColor: Color(0xff2BAE66),
                   selectedColor: Color(0xff2BAE66),
                   inactiveColor: Color(0xffF2F2F2),

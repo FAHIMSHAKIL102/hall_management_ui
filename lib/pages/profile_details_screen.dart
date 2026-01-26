@@ -87,7 +87,7 @@ class ProfileDetailsScreen extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 15.h.w, left: 30),
+            margin: EdgeInsets.only(top: 15.h, left: 30.w),
             height: 18.h,
             width: 130.w,
             child: Center(
@@ -225,7 +225,7 @@ class ProfileDetailsScreen extends StatelessWidget {
                                   ),
                                   Padding(
                                     padding:  EdgeInsets.only(top: 31.h),
-                                    child: Divider(),
+                                    child: Divider(thickness: 1.r,),
                                   ),
                                   Text(
                                     'Are you sure to Sign out?',
@@ -246,10 +246,10 @@ class ProfileDetailsScreen extends StatelessWidget {
                                       height: 55.h,
                                       width: 243.w,
                                       decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(35),
+                                        borderRadius: BorderRadius.circular(35.r),
                                         border: Border.all(
                                           color: Color(0xff2BAE66),
-                                          width: 2,
+                                          width: 2.r,
                                         ),
                                         color: Color(0xff2BAE66),
                                       ),
@@ -270,10 +270,10 @@ class ProfileDetailsScreen extends StatelessWidget {
                                     height: 55.h,
                                     width: 243.w,
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(35),
+                                      borderRadius: BorderRadius.circular(35.r),
                                       border: Border.all(
                                         color: Color(0xff2BAE66),
-                                        width: 2,
+                                        width: 2.r,
                                       ),
                                       color: Color(0xffFFFFFF),
                                     ),

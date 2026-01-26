@@ -35,7 +35,7 @@ class OneCardDetailsScreen extends StatelessWidget {
             width: 381.w,
             decoration: BoxDecoration(
               color: Color(0xffFAFAFA),
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(10.r),
             ),
             child: Padding(
               padding:  EdgeInsets.only(left: 23.w, top: 18.h),
@@ -51,7 +51,7 @@ class OneCardDetailsScreen extends StatelessWidget {
             width: 381.w,
             decoration: BoxDecoration(
               color: Color(0xffFAFAFA),
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(10.r),
             ),
             child: Padding(
               padding:  EdgeInsets.only(left: 23.w, top: 18.h),

@@ -39,7 +39,7 @@ class PaymentScreen extends StatelessWidget {
               width: 379.w,
               height: 83.h,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(20.r),
               ),
               child: Center(
                 child: ListTile(

@@ -33,11 +33,11 @@ class EditProfileScreen extends StatelessWidget {
                   fillColor: Color(0xffF2F2F2),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Color(0xffF2F2F2)),
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(10.r),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Color(0xff2BAE66)),
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(10.r),
                   ),
                   hintText: 'Gender',
                   border: OutlineInputBorder(),
@@ -60,11 +60,11 @@ class EditProfileScreen extends StatelessWidget {
                   fillColor: Color(0xffF2F2F2),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Color(0xffF2F2F2)),
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(10.r),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Color(0xff2BAE66)),
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(10.r),
                   ),
                   hintText: 'Phone Number',
                   border: OutlineInputBorder(),
