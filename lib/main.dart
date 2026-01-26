@@ -34,10 +34,10 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => SearchRoomProvider()),
       ],
       child: ScreenUtilInit(
-        designSize: Size(427, 952),
+        designSize: const Size(427, 952),
         minTextAdapt: true,
         splitScreenMode: true,
-        builder: (context, child) {
+        builder: (_, child) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: ThemeData(fontFamily: 'Urbanist'),
